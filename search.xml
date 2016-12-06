@@ -26,6 +26,14 @@
     </entry>
     
     <entry>
+      <title><![CDATA[火星行者]]></title>
+      <url>http://songsfw.github.io/2015/11/30/Curiosity-on-mars/</url>
+      <content type="html"><![CDATA[<p><img src="http://7xiyq1.com1.z0.glb.clouddn.com/codecat190926cfa9yc92ja96ff9e.jpg"></p>
+<p>时值火星北半球的春季，这次沙尘暴已经呼啸了三个月，由于太阳能电池板上覆满了厚厚的灰尘，好奇号剩余的电力已经不足以支撑它继续工作了，它挣扎着升起桅杆相机，想要最后一次环视一下这个自己工作过的红色星球，它看着自己脚下的车辙，一直延伸到地平线，然后抬起头，虽然橘红的天空空无一物，但是它知道2001火星奥德赛号现在肯定在注视着自己，每次奥德赛从他头上飞过时，他们之间都能保持八分钟的通信，哦，老朋友，再见，我可能熬不过这次风暴了</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于css3 transition的问题：transition该放在哪？]]></title>
       <url>http://songsfw.github.io/2015/11/30/css3-transition/</url>
       <content type="html"><![CDATA[<p>css的transition允许css的属性值在指定时间内平滑地过渡。<a id="more"></a>这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，并平滑地以动画效果逐渐改变CSS的属性值。</p>
@@ -35,14 +43,6 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo1"</span>&gt;</span>transition放在normal状态<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo2"</span>&gt;</span>transition放在hover状态<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>css：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;<span class="attribute">width</span>:<span class="number">100px</span>;<span class="attribute">height</span>:<span class="number">100px</span>;<span class="attribute">background</span>:<span class="number">#333</span>;<span class="attribute">color</span>:<span class="number">#fff</span>;<span class="attribute">margin</span>:<span class="number">20px</span>&#125;</div><div class="line"><span class="selector-class">.demo1</span>&#123;</div><div class="line">    <span class="attribute">-webkit-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-moz-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-ms-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-o-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">transition</span>:all <span class="number">1s</span> ease;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo1</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">    <span class="attribute">background</span>:<span class="number">#ccc</span>;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#333</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo2</span>&#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo2</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">    <span class="attribute">background</span>:<span class="number">#ccc</span>;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#333</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line">    <span class="attribute">-webkit-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-moz-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-ms-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-o-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">transition</span>:all <span class="number">1s</span> ease;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>通过demo可以看到，实际上过渡状态分为两部分，顺向和逆向，即mouseenter和mouseleave产生的动效；当transition放到元素的hover状态时，只会产生顺向的过度动画</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[火星行者]]></title>
-      <url>http://songsfw.github.io/2015/11/30/Curiosity-on-mars/</url>
-      <content type="html"><![CDATA[<p><img src="http://7xiyq1.com1.z0.glb.clouddn.com/codecat190926cfa9yc92ja96ff9e.jpg"></p>
-<p>时值火星北半球的春季，这次沙尘暴已经呼啸了三个月，由于太阳能电池板上覆满了厚厚的灰尘，好奇号剩余的电力已经不足以支撑它继续工作了，它挣扎着升起桅杆相机，想要最后一次环视一下这个自己工作过的红色星球，它看着自己脚下的车辙，一直延伸到地平线，然后抬起头，虽然橘红的天空空无一物，但是它知道2001火星奥德赛号现在肯定在注视着自己，每次奥德赛从他头上飞过时，他们之间都能保持八分钟的通信，哦，老朋友，再见，我可能熬不过这次风暴了</p>
 ]]></content>
     </entry>
     
