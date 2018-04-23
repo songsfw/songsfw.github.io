@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title><![CDATA[记第一次前后端分离]]></title>
+      <url>http://songsfw.github.io/2017/11/30/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/</url>
+      <content type="html"><![CDATA[<h2 id="NOTE"><a href="#NOTE" class="headerlink" title="NOTE"></a>NOTE</h2><p>记第一次前后端分离</p>
+<p>本次只是最原始的前后端分离，我们把以前后端的工作接了过来，也就是，后端只负责接口，渲染都在前端做</p>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>结构上采用单页形式，以swiper为基础，考虑到swiper自带的路由不好用，自己写了个简单的路由</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Router.setRouter(<span class="string">"activity"</span>,activityTab(<span class="number">1</span>));</div></pre></td></tr></table></figure>
+<p>第一个参数为路由到的页面/url,第二个参数为路由之后的回调函数</p>
+<h3 id="弹窗"><a href="#弹窗" class="headerlink" title="弹窗"></a>弹窗</h3><p>弹窗为jquery编写的插件，基本包含了所有的弹窗场景，包括 居中弹窗，右划弹窗，下划出弹窗，3秒提示层</p>
+<p>算是修改了从易车惠开始的很久以来的一个bug。</p>
+<h4 id="可关闭调用方法"><a href="#可关闭调用方法" class="headerlink" title="可关闭调用方法"></a>可关闭调用方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".obj-panel"</span>).popPanel()</div></pre></td></tr></table></figure>
+<p>所有需要关闭的弹层都由此调用，参数后边详解</p>
+<p>约定的html结构</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pop-panel right-pop city-panel"</span> <span class="attr">id</span>=<span class="string">"city-panel"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pop-con"</span> <span class="attr">id</span>=<span class="string">"actCity"</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"opt-btn"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"jsClose close"</span>&gt;</span>返回<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>直接在弹窗元素上调用弹窗插件，插件只有一个很简单的功能：显示弹窗，所有需要关闭的弹窗的动作/形式均由css控制，可以扩展更多弹窗形式而只需要添加css样式即可，不必修改js，做到了很好的样式和行为分离</p>
+<p><code>pop-panel</code>为弹层默认class(必须),绑定了弹窗默认样式，<code>right-panel</code>为从右往左划出，其他还有</p>
+<p><code>btm-panel</code> : 下往上</p>
+<p><code>center-panel</code> : 居中弹出</p>
+<p><code>pop-con</code> : 为弹窗内容区，加入了<code>overflow:auto;-webkit-overflow-scrolling:touch;</code> 弹窗内容溢出滚动</p>
+<p><code>jsClose</code> : 默认为关闭事件class,关闭当前活动弹窗，关闭遮罩层(mask)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".obj-panel"</span>).popPanel(&#123;<span class="attr">level</span>:<span class="number">2</span>&#125;)</div></pre></td></tr></table></figure>
+<p>所有弹窗level参数默认为1，即1级弹窗，当我们需要2级弹窗时，使用level:2,然后本弹窗中的<code>jsClose</code>关闭事件自动变为只关闭本2级弹窗</p>
+<p>PS : 所有以上弹窗除提供默认的<code>jsClose</code>关闭事件外，也都可以调用插件的关闭方法来关闭弹窗，以此来满足一些回调方法，比如执行完指定方法后关闭弹窗</p>
+<p><code>$.fn.popPanel.hide($(&quot;.quiz-page&quot;),$(&quot;.mask&quot;))</code></p>
+<p>第一个参数为要关闭的弹窗，第二个参数为遮罩层</p>
+<h4 id="3秒隐藏提示层"><a href="#3秒隐藏提示层" class="headerlink" title="3秒隐藏提示层"></a>3秒隐藏提示层</h4><p><code>$(&quot;.tip-pop&quot;).popPanel({type:2,desc:&quot;暂无活动&quot;})</code></p>
+<p>所有可关闭的弹窗 type 默认为1，渐隐提示层 type 为2，第二个参数desc 为提示文字，type值为2 的时候才生效</p>
+<p>PS ： 弹窗提供了一个回调函数，以备不时之需</p>
+<h3 id="一些零碎的小方法"><a href="#一些零碎的小方法" class="headerlink" title="一些零碎的小方法"></a>一些零碎的小方法</h3><p><code>spliceArr(arr,target)</code> : 去掉数组中指定的项，argument 1 为目标数组，argument 2为要去掉的目标元素</p>
+<p><code>addClass3</code> ： 为css3属性添加兼容</p>
+<p><code>toucheContent</code> : 使用js模拟滚动（scroll）</p>
+<p><code>motion-btn</code> : 模拟android按钮的水波纹交互效果</p>
+<h3 id="其他一些东西"><a href="#其他一些东西" class="headerlink" title="其他一些东西"></a>其他一些东西</h3><p>还是感觉自己技术有限吧。很多方法都加了很多参数来区别各种情况，总感觉这不会是最优的解决方案。肯定是有更好的写法</p>
+<p>比如 <code>getLocalAct(actMap,filter)</code> 调用线下活动接口，actMap 为 传的ajax参数，filter为是否在进行筛选，团购也是如此，因为进行筛选的时候是不需要全国数据补齐的。需要区分</p>
+<p><code>setACtData(data,n)</code> 插入线下活动，data为接口拿到的数据，n为是否在进行全国数据补齐</p>
+<p>这里要说一下非常扯的地方，接口过来的数据是分页好的，而产品要求移动端首页要显示当前区域活动，如果当前区域活动数量过少，用全国数据补齐一页。因此 线下活动 基本上每次显示都会请求2次，而用全国数据补齐的时候，还要去重之前已经显示过的活动</p>
+<p>线下活动和团购逻辑是一样的，方法基本上也是一样的，但我就是懒得将方法写成可复用的了…..</p>
+<p>最后望大家尽快出‘坑’</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[永不消逝的风]]></title>
+      <url>http://songsfw.github.io/2016/12/07/%E6%B0%B8%E4%B8%8D%E6%B6%88%E9%80%9D%E7%9A%84%E9%A3%8E/</url>
+      <content type="html"><![CDATA[<h2 id="永不消逝的风"><a href="#永不消逝的风" class="headerlink" title="永不消逝的风"></a>永不消逝的风</h2><blockquote>
+<p>太阳系漫游系列</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[来点音乐，移动页面加入背景音乐按钮]]></title>
       <url>http://songsfw.github.io/2016/11/30/%E6%9D%A5%E7%82%B9%E9%9F%B3%E4%B9%90%EF%BC%8C%E7%A7%BB%E5%8A%A8%E9%A1%B5%E9%9D%A2%E5%8A%A0%E5%85%A5%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90%E6%8C%89%E9%92%AE/</url>
       <content type="html"><![CDATA[<h2 id="移动页面加入背景音乐按钮"><a href="#移动页面加入背景音乐按钮" class="headerlink" title="移动页面加入背景音乐按钮"></a>移动页面加入背景音乐按钮</h2><p>移动端页面加入音乐示例：</p>
@@ -43,21 +93,6 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo1"</span>&gt;</span>transition放在normal状态<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo2"</span>&gt;</span>transition放在hover状态<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>css：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;<span class="attribute">width</span>:<span class="number">100px</span>;<span class="attribute">height</span>:<span class="number">100px</span>;<span class="attribute">background</span>:<span class="number">#333</span>;<span class="attribute">color</span>:<span class="number">#fff</span>;<span class="attribute">margin</span>:<span class="number">20px</span>&#125;</div><div class="line"><span class="selector-class">.demo1</span>&#123;</div><div class="line">    <span class="attribute">-webkit-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-moz-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-ms-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-o-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">transition</span>:all <span class="number">1s</span> ease;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo1</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">    <span class="attribute">background</span>:<span class="number">#ccc</span>;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#333</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo2</span>&#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo2</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">    <span class="attribute">background</span>:<span class="number">#ccc</span>;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#333</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line">    <span class="attribute">-webkit-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-moz-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-ms-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">-o-transition</span>:all <span class="number">1s</span> ease;</div><div class="line">    <span class="attribute">transition</span>:all <span class="number">1s</span> ease;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>通过demo可以看到，实际上过渡状态分为两部分，顺向和逆向，即mouseenter和mouseleave产生的动效；当transition放到元素的hover状态时，只会产生顺向的过度动画</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>http://songsfw.github.io/2015/05/06/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content>
     </entry>
     

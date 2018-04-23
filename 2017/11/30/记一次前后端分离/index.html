@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        分类: 前端开发 | The answer is 42
+        记第一次前后端分离 | The answer is 42
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://songsfw.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 前端开发 | The answer is 42">
+    <meta property="og:title" content="记第一次前后端分离 | The answer is 42">
     <meta property="og:description" content="web前端开发 学习 生活">
     
      <!--[if lte IE 9]>
@@ -201,331 +201,242 @@ ga('create', 'UA-88366777-1', 'auto'); ga('send', 'pageview');
                 </button>
 				
 				
-                <!-- Index Module -->
-<div class="material-index mdl-grid">
-	
-		<!-- Paradox Header -->
-		<!-- Daily pic -->
-<div class="mdl-card daily-pic mdl-cell mdl-cell--8-col index-top-block">
-    
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://api.i-meto.com/bing?cat=S)">
-        <p class="index-top-block-slogan"><a href="#">光锥之内皆命运</a></p>
-    </div>
+                
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
 
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>Codecat</strong>
-        </div>
-    </div>
-</div>
-
-		<!-- Blog info -->
-<div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-	
-    <!-- Search -->
-	
-
-
-
-
-	<!-- Local -->
-	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-		<label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-			<i class="material-icons mdl-color-text--white" role="presentation">search</i>
-		</label>
-
-		<form id="search-form" class="mdl-textfield__expandable-holder">
-			<input type="text" id="search" class="form-control mdl-textfield__input search-input" name="q" results="0" placeholder=""/>
-			<label id="search-form-label" class="mdl-textfield__label" for="search"></label>
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
 			
-		</form>
-	</div>
-
-	<div id="local-search-result"></div>
-
-
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="null">
-            <img src="/img/logo.png" alt="logo" />
-        </a>
-    </div>
-
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>The answer is 42</strong>
-        </div>
-        <div class="section-spacer"></div>
-        
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-                <a class="index_share-link" href="/about" title="about">
-                    <l class="mdl-menu__item mdl-js-ripple-effect"i>
-                        about
-                    </li>
-                </a>
-            
-        </ul>
-        
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-            <a class="index_share-link" href="/atom.xml">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    文章 RSS
-                </li>
-            </a>
-            <!--<a class="index_share-link" href="https://twitter.com/intent/tweet?text=The answer is 42&url=http://songsfw.github.io/&via=Codecat" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    分享到 Twitter
-                </li>
-            </a>
-            <a class="index_share-link" href="https://plus.google.com/share?url=http://songsfw.github.io/" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    分享到 Google+
-                </li>
-            </a>-->
-            <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=The answer is 42&url=http://songsfw.github.io/&pic=&searchPic=false&style=simple" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    分享到微博
-                </li>
-            </a>
-        </ul>
-    </div>
-</div>
-
-	
-    
-    
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#NOTE"><span class="post-toc-number">1.</span> <span class="post-toc-text">NOTE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#路由"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">路由</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#弹窗"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">弹窗</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#可关闭调用方法"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">可关闭调用方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3秒隐藏提示层"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">3秒隐藏提示层</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一些零碎的小方法"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">一些零碎的小方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他一些东西"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">其他一些东西</span></a></li></ol></li></ol>
 		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
 	
 		
 			<!-- Random Thumbnail -->
 			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2017/11/30/记一次前后端分离/">记第一次前后端分离</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-          NOTE
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/30/记一次前后端分离/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Codecat's avatar">
-            </div>
-            <div>
-                <strong>Codecat</strong>
-                <span>11月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/前端开发/">前端开发</a>
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/11/30/记一次前后端分离/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		<!-- Custom Thumbnail -->
-		<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://admin.bitauto.com/editortest/zhaoxs/post/music.jpg)">
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/11/30/来点音乐，移动页面加入背景音乐按钮/">来点音乐，移动页面加入背景音乐按钮</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-          
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/11/30/来点音乐，移动页面加入背景音乐按钮/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Codecat's avatar">
-            </div>
-            <div>
-                <strong>Codecat</strong>
-                <span>11月 30, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/前端开发/">前端开发</a>
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2016/11/30/来点音乐，移动页面加入背景音乐按钮/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		
-			<!-- Random Thumbnail -->
-			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2015/11/30/css3-transition/">关于css3 transition的问题：transition该放在哪？</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-          css的transition允许css的属性值在指定时间内平滑地过渡。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2015/11/30/css3-transition/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Codecat's avatar">
-            </div>
-            <div>
-                <strong>Codecat</strong>
-                <span>11月 30, 2015</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/前端开发/">前端开发</a>
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2015/11/30/css3-transition/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-    
-	
-		<script>
+				<script>
     
     var randomNum;
+    randomNum = Math.floor(Math.random() * 5 + 1);
     
-    var locatePost = $(".something-else").next();
-    for(var i=0; i < 10; i++){
-        
-        randomNum = Math.floor(Math.random() * 5 + 1);
-        
-        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
-        
-        locatePost = locatePost.next();
-    }
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
     
 </script>
 
+		
+	
+        <p class="article-headline-p">
+            记第一次前后端分离
+        </p>
+    </div>
+
 	
 
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+    
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Codecat</strong>
+        <span>11月 30, 2017</span>
+    </div>
+    
+    <div class="section-spacer"></div>
+	
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+    
+    <!-- Tags (bookmark) -->
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/前端开发/">前端开发</a>
+    </ul>
+    
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    
+    <!-- Leancloud Views -->
+    <a class="post_share-link" href="#">
+        <li class="mdl-menu__item">
+            <span id="/2017/11/30/记一次前后端分离/" class="leancloud-views_num" data-flag-title="记第一次前后端分离">
+     &nbsp;浏览量
+</span>
+        </li>
+    </a>
+    
+    
+    
+    
+    <!-- Share Twitter -->
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=记第一次前后端分离&url=http://songsfw.github.io//2017/11/30/记一次前后端分离/index.html&via=Codecat" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Twitter
+        </li>
+    </a>
+    
+    <!-- Share Google+ -->
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://songsfw.github.io//2017/11/30/记一次前后端分离/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+    <!-- Share Weibo -->
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=记第一次前后端分离&url=http://songsfw.github.io//2017/11/30/记一次前后端分离/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+</ul>
 </div>
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<h2 id="NOTE"><a href="#NOTE" class="headerlink" title="NOTE"></a>NOTE</h2><p>记第一次前后端分离</p>
+<p>本次只是最原始的前后端分离，我们把以前后端的工作接了过来，也就是，后端只负责接口，渲染都在前端做</p>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>结构上采用单页形式，以swiper为基础，考虑到swiper自带的路由不好用，自己写了个简单的路由</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Router.setRouter(<span class="string">"activity"</span>,activityTab(<span class="number">1</span>));</div></pre></td></tr></table></figure>
+<p>第一个参数为路由到的页面/url,第二个参数为路由之后的回调函数</p>
+<h3 id="弹窗"><a href="#弹窗" class="headerlink" title="弹窗"></a>弹窗</h3><p>弹窗为jquery编写的插件，基本包含了所有的弹窗场景，包括 居中弹窗，右划弹窗，下划出弹窗，3秒提示层</p>
+<p>算是修改了从易车惠开始的很久以来的一个bug。</p>
+<h4 id="可关闭调用方法"><a href="#可关闭调用方法" class="headerlink" title="可关闭调用方法"></a>可关闭调用方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".obj-panel"</span>).popPanel()</div></pre></td></tr></table></figure>
+<p>所有需要关闭的弹层都由此调用，参数后边详解</p>
+<p>约定的html结构</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pop-panel right-pop city-panel"</span> <span class="attr">id</span>=<span class="string">"city-panel"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pop-con"</span> <span class="attr">id</span>=<span class="string">"actCity"</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"opt-btn"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"jsClose close"</span>&gt;</span>返回<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>直接在弹窗元素上调用弹窗插件，插件只有一个很简单的功能：显示弹窗，所有需要关闭的弹窗的动作/形式均由css控制，可以扩展更多弹窗形式而只需要添加css样式即可，不必修改js，做到了很好的样式和行为分离</p>
+<p><code>pop-panel</code>为弹层默认class(必须),绑定了弹窗默认样式，<code>right-panel</code>为从右往左划出，其他还有</p>
+<p><code>btm-panel</code> : 下往上</p>
+<p><code>center-panel</code> : 居中弹出</p>
+<p><code>pop-con</code> : 为弹窗内容区，加入了<code>overflow:auto;-webkit-overflow-scrolling:touch;</code> 弹窗内容溢出滚动</p>
+<p><code>jsClose</code> : 默认为关闭事件class,关闭当前活动弹窗，关闭遮罩层(mask)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".obj-panel"</span>).popPanel(&#123;<span class="attr">level</span>:<span class="number">2</span>&#125;)</div></pre></td></tr></table></figure>
+<p>所有弹窗level参数默认为1，即1级弹窗，当我们需要2级弹窗时，使用level:2,然后本弹窗中的<code>jsClose</code>关闭事件自动变为只关闭本2级弹窗</p>
+<p>PS : 所有以上弹窗除提供默认的<code>jsClose</code>关闭事件外，也都可以调用插件的关闭方法来关闭弹窗，以此来满足一些回调方法，比如执行完指定方法后关闭弹窗</p>
+<p><code>$.fn.popPanel.hide($(&quot;.quiz-page&quot;),$(&quot;.mask&quot;))</code></p>
+<p>第一个参数为要关闭的弹窗，第二个参数为遮罩层</p>
+<h4 id="3秒隐藏提示层"><a href="#3秒隐藏提示层" class="headerlink" title="3秒隐藏提示层"></a>3秒隐藏提示层</h4><p><code>$(&quot;.tip-pop&quot;).popPanel({type:2,desc:&quot;暂无活动&quot;})</code></p>
+<p>所有可关闭的弹窗 type 默认为1，渐隐提示层 type 为2，第二个参数desc 为提示文字，type值为2 的时候才生效</p>
+<p>PS ： 弹窗提供了一个回调函数，以备不时之需</p>
+<h3 id="一些零碎的小方法"><a href="#一些零碎的小方法" class="headerlink" title="一些零碎的小方法"></a>一些零碎的小方法</h3><p><code>spliceArr(arr,target)</code> : 去掉数组中指定的项，argument 1 为目标数组，argument 2为要去掉的目标元素</p>
+<p><code>addClass3</code> ： 为css3属性添加兼容</p>
+<p><code>toucheContent</code> : 使用js模拟滚动（scroll）</p>
+<p><code>motion-btn</code> : 模拟android按钮的水波纹交互效果</p>
+<h3 id="其他一些东西"><a href="#其他一些东西" class="headerlink" title="其他一些东西"></a>其他一些东西</h3><p>还是感觉自己技术有限吧。很多方法都加了很多参数来区别各种情况，总感觉这不会是最优的解决方案。肯定是有更好的写法</p>
+<p>比如 <code>getLocalAct(actMap,filter)</code> 调用线下活动接口，actMap 为 传的ajax参数，filter为是否在进行筛选，团购也是如此，因为进行筛选的时候是不需要全国数据补齐的。需要区分</p>
+<p><code>setACtData(data,n)</code> 插入线下活动，data为接口拿到的数据，n为是否在进行全国数据补齐</p>
+<p>这里要说一下非常扯的地方，接口过来的数据是分页好的，而产品要求移动端首页要显示当前区域活动，如果当前区域活动数量过少，用全国数据补齐一页。因此 线下活动 基本上每次显示都会请求2次，而用全国数据补齐的时候，还要去重之前已经显示过的活动</p>
+<p>线下活动和团购逻辑是一样的，方法基本上也是一样的，但我就是懒得将方法写成可复用的了…..</p>
+<p>最后望大家尽快出‘坑’</p>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+        <div class="ds-thread" 
+            data-thread-key="2017/11/30/记一次前后端分离/" 
+            data-url="http://songsfw.github.io/2017/11/30/记一次前后端分离/"
+            data-title="记第一次前后端分离"></div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/12/07/永不消逝的风/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
 
 				
 				
