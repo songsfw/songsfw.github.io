@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://songsfw.github.io/"/>
-  <updated>2020-06-17T23:05:38.092Z</updated>
+  <updated>2020-06-17T23:46:19.242Z</updated>
   <id>https://songsfw.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://songsfw.github.io/2018/06/20/vue-%E7%BB%84%E4%BB%B6%E9%97%B4%E4%BC%A0%E5%80%BC/"/>
     <id>https://songsfw.github.io/2018/06/20/vue-组件间传值/</id>
     <published>2018-06-19T16:00:00.000Z</published>
-    <updated>2020-06-17T23:05:38.092Z</updated>
+    <updated>2020-06-17T23:46:19.242Z</updated>
     
     <content type="html"><![CDATA[<h3 id="组件间常用通信方式有以下几种"><a href="#组件间常用通信方式有以下几种" class="headerlink" title="组件间常用通信方式有以下几种"></a>组件间常用通信方式有以下几种</h3><p>1 父传子 属性传值  props</p>
 <p>2 子传父 派发 event </p>
@@ -95,7 +95,7 @@
     <link href="https://songsfw.github.io/2018/06/13/vue-%E5%85%B3%E4%BA%8Ekey/"/>
     <id>https://songsfw.github.io/2018/06/13/vue-关于key/</id>
     <published>2018-06-12T16:00:00.000Z</published>
-    <updated>2020-06-17T23:04:52.636Z</updated>
+    <updated>2020-06-17T23:46:31.568Z</updated>
     
     <content type="html"><![CDATA[<h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><p>官方解释  </p>
 <p>key 的特殊 attribute 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 对比时辨识 VNodes。如果不使用 key，Vue 会使用一种最大限度减少动态元素并且尽可能的尝试就地修改/复用相同类型元素的算法。而使用 key 时，它会基于 key 的变化重新排列元素顺序，并且会移除 key 不存在的元素。</p>
@@ -213,43 +213,6 @@
   </entry>
   
   <entry>
-    <title>javascript-reduce</title>
-    <link href="https://songsfw.github.io/2017/07/25/JavaScript-reduce/"/>
-    <id>https://songsfw.github.io/2017/07/25/JavaScript-reduce/</id>
-    <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-02-27T13:57:49.977Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="数组操作-累加器-reduce"><a href="#数组操作-累加器-reduce" class="headerlink" title="数组操作-累加器 reduce"></a>数组操作-累加器 reduce</h3><p>reduce() 方法接收一个函数作为累加器,reduce 为数组中的每一个元素依次执行回调函数</p>
-<p>累加器可以是需要待递增的数字、待填充的对象、 待拼接的字符串或数组等。</p>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>arr.reduce(function(prev,cur,index,arr){<br>…<br>}, init);</p>
-<p>arr 表示原数组；</p>
-<p>prev 表示上一次调用回调时的返回值，或者初始值 init;</p>
-<p>cur 表示当前正在处理的数组元素；</p>
-<p>index 表示当前正在处理的数组元素的索引，若提供 init 值，则索引为0，否则索引为1；</p>
-<p>init 表示初始值(第一次调用 callback 的第一个参数)</p>
-<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>求和</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line"><span class="keyword">const</span> sum = arr.reduce(<span class="function">(<span class="params">pre, item</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> pre + item</div><div class="line">&#125;, <span class="number">0</span>)</div><div class="line"><span class="built_in">console</span>.log(sum) <span class="comment">// 15</span></div></pre></td></tr></table></figure>
-<p>求数组项最大值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> max = arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">prev, cur</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(prev,cur);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>数组去重</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newArr = arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">prev, cur</span>) </span>&#123;</div><div class="line">    prev.indexOf(cur) === <span class="number">-1</span> &amp;&amp; prev.push(cur);</div><div class="line">    <span class="keyword">return</span> prev;</div><div class="line">&#125;,[]);</div></pre></td></tr></table></figure>
-<p>常见的拼接字符串<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> html = arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev,cur</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> prev += <span class="string">'&lt;li&gt;'</span>+ cur +<span class="string">'&lt;/li&gt;'</span></div><div class="line">&#125;,<span class="string">''</span>)</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;数组操作-累加器-reduce&quot;&gt;&lt;a href=&quot;#数组操作-累加器-reduce&quot; class=&quot;headerlink&quot; title=&quot;数组操作-累加器 reduce&quot;&gt;&lt;/a&gt;数组操作-累加器 reduce&lt;/h3&gt;&lt;p&gt;reduce() 方法接收一个函数作
-    
-    </summary>
-    
-      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JavaScript-call and apply</title>
     <link href="https://songsfw.github.io/2017/07/25/ES6-%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0/"/>
     <id>https://songsfw.github.io/2017/07/25/ES6-生成器函数/</id>
@@ -291,36 +254,125 @@
   </entry>
   
   <entry>
-    <title>javascript-递归</title>
-    <link href="https://songsfw.github.io/2017/07/25/JavaScript-%E9%80%92%E5%BD%92/"/>
-    <id>https://songsfw.github.io/2017/07/25/JavaScript-递归/</id>
+    <title>javascript-reduce</title>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript-reduce/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript-reduce/</id>
     <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-01-19T06:35:42.000Z</updated>
+    <updated>2020-02-27T13:57:49.977Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="递归的用法"><a href="#递归的用法" class="headerlink" title="递归的用法"></a>递归的用法</h3><p>递归即 函数自己调用自己，递归必须有结束条件</p>
-<p>常见的阶乘算法</p>
-<p>for循环</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> num = <span class="number">1</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</div><div class="line">    num=num*i</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(num)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>递归</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">  </div><div class="line">  <span class="keyword">if</span>(n&lt;=<span class="number">1</span>)&#123;</div><div class="line">      <span class="keyword">return</span> <span class="number">1</span></div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">      <span class="keyword">return</span> n*mul(n<span class="number">-1</span>)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>递归代码写起来比较接近语义化  容易理解,比如阶乘 就是求 n * !(n-1)</p>
-<p>虽然递归代码看起来简洁，但是执行效率很低，他的执行顺序是从外到里，当满足结束条件时，再依次从里到外执行</p>
-<p>例如阶乘 的 执行过程 (每次执行都要等待下一次执行结果返回)</p>
-<p>执行mul(4) –&gt;  4*mul(3)   此时代码会等待mul(3)的执行结果</p>
-<p>执行mul(3) –&gt;  3*mul(2)   等待mul(2)</p>
-<p>执行mul(2) –&gt;  2*mul(1)   等待mul(1)</p>
-<p>执行mul(1) –&gt;  return 1   到达结束条件，得到mul(1)的值 开始依次向外返回值</p>
-<p>mul(2)   –&gt;  2*mul(1)  –&gt;  2</p>
-<p>mul(3)   –&gt;  3*mul(2)  –&gt;  6</p>
-<p>mul(4)   –&gt;  4*mul(3)  –&gt;  24</p>
+    <content type="html"><![CDATA[<h3 id="数组操作-累加器-reduce"><a href="#数组操作-累加器-reduce" class="headerlink" title="数组操作-累加器 reduce"></a>数组操作-累加器 reduce</h3><p>reduce() 方法接收一个函数作为累加器,reduce 为数组中的每一个元素依次执行回调函数</p>
+<p>累加器可以是需要待递增的数字、待填充的对象、 待拼接的字符串或数组等。</p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>arr.reduce(function(prev,cur,index,arr){<br>…<br>}, init);</p>
+<p>arr 表示原数组；</p>
+<p>prev 表示上一次调用回调时的返回值，或者初始值 init;</p>
+<p>cur 表示当前正在处理的数组元素；</p>
+<p>index 表示当前正在处理的数组元素的索引，若提供 init 值，则索引为0，否则索引为1；</p>
+<p>init 表示初始值(第一次调用 callback 的第一个参数)</p>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>求和</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line"><span class="keyword">const</span> sum = arr.reduce(<span class="function">(<span class="params">pre, item</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> pre + item</div><div class="line">&#125;, <span class="number">0</span>)</div><div class="line"><span class="built_in">console</span>.log(sum) <span class="comment">// 15</span></div></pre></td></tr></table></figure>
+<p>求数组项最大值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> max = arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">prev, cur</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(prev,cur);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>数组去重</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newArr = arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">prev, cur</span>) </span>&#123;</div><div class="line">    prev.indexOf(cur) === <span class="number">-1</span> &amp;&amp; prev.push(cur);</div><div class="line">    <span class="keyword">return</span> prev;</div><div class="line">&#125;,[]);</div></pre></td></tr></table></figure>
+<p>常见的拼接字符串<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> html = arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev,cur</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> prev += <span class="string">'&lt;li&gt;'</span>+ cur +<span class="string">'&lt;/li&gt;'</span></div><div class="line">&#125;,<span class="string">''</span>)</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;递归的用法&quot;&gt;&lt;a href=&quot;#递归的用法&quot; class=&quot;headerlink&quot; title=&quot;递归的用法&quot;&gt;&lt;/a&gt;递归的用法&lt;/h3&gt;&lt;p&gt;递归即 函数自己调用自己，递归必须有结束条件&lt;/p&gt;
-&lt;p&gt;常见的阶乘算法&lt;/p&gt;
-&lt;p&gt;for循环&lt;/p&gt;
-&lt;fi
+      &lt;h3 id=&quot;数组操作-累加器-reduce&quot;&gt;&lt;a href=&quot;#数组操作-累加器-reduce&quot; class=&quot;headerlink&quot; title=&quot;数组操作-累加器 reduce&quot;&gt;&lt;/a&gt;数组操作-累加器 reduce&lt;/h3&gt;&lt;p&gt;reduce() 方法接收一个函数作
+    
+    </summary>
+    
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript-数组</title>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript-%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript-数组操作/</id>
+    <published>2017-07-25T02:24:00.000Z</published>
+    <updated>2020-01-20T07:06:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="数组常用操作"><a href="#数组常用操作" class="headerlink" title="数组常用操作"></a>数组常用操作</h3><p>concat  数组合并</p>
+<p>pop   删除数组最后一项，返回该元素</p>
+<p>push  添加新参数到数组末尾，返回新数组长度</p>
+<p>shift  删除数组第一项，返回该元素</p>
+<p>unshift  添加新参数到数组开头，返回新数组长度</p>
+<p>slice  返回从原数组中指定开始下标到结束下标之间的项组成的新数组</p>
+<p>splice  从start位置开始删除deleteCount项，并从该位置起插入val1,val2,  // 会改变原数组</p>
+<p>reverse  将数组中的元素倒置。该方法在原数组上进行操作，而不会创建新的数组。</p>
+<p>var arr1 = [1,2,3,4,5]<br>var arr2 = arr1</p>
+<p>arr2.splice(3,1)  //[1,2,3,5]</p>
+<p>arr1      //[1,2,3,5]</p>
+<p>因为数组是引用类型，arr2 引用的只是个指针，指向arr1，arr2修改  arr1也会改变</p>
+<p>join    数组转字符串</p>
+<p>split   字符串转数组</p>
+<p>indexOf   返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1</p>
+<p>includes   查找数组中是否包含给定元素  返回布尔值，如果不需要返回索引值  建议用includes代替indexOf</p>
+<h4 id="filter-find"><a href="#filter-find" class="headerlink" title="filter/find"></a>filter/find</h4><p>通过给数组每一项调用回调函数方法 过滤数组项，并将过滤后的项作为新数组返回</p>
+<p>语法  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array.filter(<span class="function"><span class="keyword">function</span>(<span class="params">currentValue,index,arr</span>), <span class="title">thisValue</span>)</span></div></pre></td></tr></table></figure>
+<p>filter会遍历整个数组，如果我们只需要返回符合回调函数条件的第一个元素，可以使用 find 代替</p>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array.find(<span class="function"><span class="keyword">function</span>(<span class="params">currentValue, index, arr</span>),<span class="title">thisValue</span>)</span></div></pre></td></tr></table></figure>
+<p>同filter一样，都需要一个回调函数，区别是只返回符合条件的第一项。当找到符合回调函数过滤条件的第一个元素时，它会立即停止往下的搜寻。不再遍历整个数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> characters = [</div><div class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">'ironman'</span> &#125;,</div><div class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'black_widow'</span> &#125;,</div><div class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">'captain_america'</span> &#125;,</div><div class="line">  &#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">name</span>: <span class="string">'captain_america'</span> &#125;,</div><div class="line">];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCharacter</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="params">character</span> =&gt;</span> character.name === name;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(characters.filter(getCharacter(<span class="string">'captain_america'</span>)));</div><div class="line"><span class="comment">// [</span></div><div class="line"><span class="comment">//   &#123; id: 3, name: 'captain_america' &#125;,</span></div><div class="line"><span class="comment">//   &#123; id: 4, name: 'captain_america' &#125;,</span></div><div class="line"><span class="comment">// ]</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(characters.find(getCharacter(<span class="string">'captain_america'</span>)));</div><div class="line"><span class="comment">// &#123; id: 3, name: 'captain_america' &#125;</span></div></pre></td></tr></table></figure>
+<h4 id="some"><a href="#some" class="headerlink" title="some"></a>some</h4><p>当我们需要检测数组中是否含有满足条件的某个元素时</p>
+<p>同find类似，但是some返回的是布尔值</p>
+<p>有点像是 indexOf和includes的栗子</p>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array.some(<span class="function"><span class="keyword">function</span>(<span class="params">currentValue,index,arr</span>),<span class="title">thisValue</span>)</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;数组常用操作&quot;&gt;&lt;a href=&quot;#数组常用操作&quot; class=&quot;headerlink&quot; title=&quot;数组常用操作&quot;&gt;&lt;/a&gt;数组常用操作&lt;/h3&gt;&lt;p&gt;concat  数组合并&lt;/p&gt;
+&lt;p&gt;pop   删除数组最后一项，返回该元素&lt;/p&gt;
+&lt;p&gt;push  
+    
+    </summary>
+    
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript-原型原型链</title>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E5%8E%9F%E5%9E%8B%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-原型原型链/</id>
+    <published>2017-07-25T02:24:00.000Z</published>
+    <updated>2020-01-14T07:54:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="关于原型"><a href="#关于原型" class="headerlink" title="关于原型"></a>关于原型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name</div><div class="line">&#125;</div><div class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"tom"</span>)</div><div class="line">person1.say()</div></pre></td></tr></table></figure>
+<p>Person.prototype 是Person构造函数实例化对象(person1)的原型对象</p>
+<p>ps person1.<strong>proto</strong>  同样指向自己的原型对象  = Person.prototype<br>   person1.constructor  (Person.prototype.constructor) 查看所属构造函数  -&gt;  Person    </p>
+<p>实例化对象可以访问到原型上的属性方法，当然会优先在自身寻找属性方法，自身找不到会向上从原型查找</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Grand</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">Grand.prototype.lastName = <span class="string">'sean'</span></div><div class="line"><span class="keyword">var</span> grand = <span class="keyword">new</span> Grand()</div><div class="line"></div><div class="line">Father.prototype = grand</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">'tom'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> father = <span class="keyword">new</span> Father()</div><div class="line"></div><div class="line">Son.prototype=father</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">'kim'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> son = <span class="keyword">new</span> Son()</div></pre></td></tr></table></figure>
+<p>原型链的查找过程类似于作用域链，就近查找属性</p>
+<p>son.lastName  -&gt; sean</p>
+<p>实例对象son中没有lastName,因此他会一路向上查找  到 grand</p>
+<p>-&gt; 原型链</p>
+<p>所有对象最终都是指向 Object.prototype , Object.prototype 没有原型对象，查找到最终结果为null</p>
+<ul>
+<li>例外 Object.create(原型) 所创建的对象</li>
+</ul>
+<p>番外  new一个对象的时候  到底做了什么？</p>
+<p>1.创建一个空对象，作为将要返回的实例对象 </p>
+<p>2.将空对象的原型指向构造函数的prototype属性，也就是构造函数的prototype属性。 </p>
+<p>3.将空对象赋值给构造函数内部的this关键字，也就是this关键字会指向实例对象。 </p>
+<p>4.开始执行构造函数内部的代码。   返回对象</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;关于原型&quot;&gt;&lt;a href=&quot;#关于原型&quot; class=&quot;headerlink&quot; title=&quot;关于原型&quot;&gt;&lt;/a&gt;关于原型&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;
     
     </summary>
     
@@ -401,59 +453,6 @@
   </entry>
   
   <entry>
-    <title>javascript-数组</title>
-    <link href="https://songsfw.github.io/2017/07/25/JavaScript-%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/"/>
-    <id>https://songsfw.github.io/2017/07/25/JavaScript-数组操作/</id>
-    <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-01-20T07:06:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="数组常用操作"><a href="#数组常用操作" class="headerlink" title="数组常用操作"></a>数组常用操作</h3><p>concat  数组合并</p>
-<p>pop   删除数组最后一项，返回该元素</p>
-<p>push  添加新参数到数组末尾，返回新数组长度</p>
-<p>shift  删除数组第一项，返回该元素</p>
-<p>unshift  添加新参数到数组开头，返回新数组长度</p>
-<p>slice  返回从原数组中指定开始下标到结束下标之间的项组成的新数组</p>
-<p>splice  从start位置开始删除deleteCount项，并从该位置起插入val1,val2,  // 会改变原数组</p>
-<p>reverse  将数组中的元素倒置。该方法在原数组上进行操作，而不会创建新的数组。</p>
-<p>var arr1 = [1,2,3,4,5]<br>var arr2 = arr1</p>
-<p>arr2.splice(3,1)  //[1,2,3,5]</p>
-<p>arr1      //[1,2,3,5]</p>
-<p>因为数组是引用类型，arr2 引用的只是个指针，指向arr1，arr2修改  arr1也会改变</p>
-<p>join    数组转字符串</p>
-<p>split   字符串转数组</p>
-<p>indexOf   返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1</p>
-<p>includes   查找数组中是否包含给定元素  返回布尔值，如果不需要返回索引值  建议用includes代替indexOf</p>
-<h4 id="filter-find"><a href="#filter-find" class="headerlink" title="filter/find"></a>filter/find</h4><p>通过给数组每一项调用回调函数方法 过滤数组项，并将过滤后的项作为新数组返回</p>
-<p>语法  </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array.filter(<span class="function"><span class="keyword">function</span>(<span class="params">currentValue,index,arr</span>), <span class="title">thisValue</span>)</span></div></pre></td></tr></table></figure>
-<p>filter会遍历整个数组，如果我们只需要返回符合回调函数条件的第一个元素，可以使用 find 代替</p>
-<p>语法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array.find(<span class="function"><span class="keyword">function</span>(<span class="params">currentValue, index, arr</span>),<span class="title">thisValue</span>)</span></div></pre></td></tr></table></figure>
-<p>同filter一样，都需要一个回调函数，区别是只返回符合条件的第一项。当找到符合回调函数过滤条件的第一个元素时，它会立即停止往下的搜寻。不再遍历整个数组。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> characters = [</div><div class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">'ironman'</span> &#125;,</div><div class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'black_widow'</span> &#125;,</div><div class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">'captain_america'</span> &#125;,</div><div class="line">  &#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">name</span>: <span class="string">'captain_america'</span> &#125;,</div><div class="line">];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCharacter</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="params">character</span> =&gt;</span> character.name === name;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(characters.filter(getCharacter(<span class="string">'captain_america'</span>)));</div><div class="line"><span class="comment">// [</span></div><div class="line"><span class="comment">//   &#123; id: 3, name: 'captain_america' &#125;,</span></div><div class="line"><span class="comment">//   &#123; id: 4, name: 'captain_america' &#125;,</span></div><div class="line"><span class="comment">// ]</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(characters.find(getCharacter(<span class="string">'captain_america'</span>)));</div><div class="line"><span class="comment">// &#123; id: 3, name: 'captain_america' &#125;</span></div></pre></td></tr></table></figure>
-<h4 id="some"><a href="#some" class="headerlink" title="some"></a>some</h4><p>当我们需要检测数组中是否含有满足条件的某个元素时</p>
-<p>同find类似，但是some返回的是布尔值</p>
-<p>有点像是 indexOf和includes的栗子</p>
-<p>语法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array.some(<span class="function"><span class="keyword">function</span>(<span class="params">currentValue,index,arr</span>),<span class="title">thisValue</span>)</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;数组常用操作&quot;&gt;&lt;a href=&quot;#数组常用操作&quot; class=&quot;headerlink&quot; title=&quot;数组常用操作&quot;&gt;&lt;/a&gt;数组常用操作&lt;/h3&gt;&lt;p&gt;concat  数组合并&lt;/p&gt;
-&lt;p&gt;pop   删除数组最后一项，返回该元素&lt;/p&gt;
-&lt;p&gt;push  
-    
-    </summary>
-    
-      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JavaScript-call and apply</title>
     <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-call%20and%20apply/"/>
     <id>https://songsfw.github.io/2017/07/25/JavaScript入门-call and apply/</id>
@@ -503,6 +502,47 @@
 &lt;ul&gt;
 &lt;li&gt;在js oop中，会常常使用到apply() call(),这提供了一个更优雅的改变this指向的方法&lt;/li&gt;
 &lt;/ul
+    
+    </summary>
+    
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript-递归</title>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript-%E9%80%92%E5%BD%92/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript-递归/</id>
+    <published>2017-07-25T02:24:00.000Z</published>
+    <updated>2020-01-19T06:35:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="递归的用法"><a href="#递归的用法" class="headerlink" title="递归的用法"></a>递归的用法</h3><p>递归即 函数自己调用自己，递归必须有结束条件</p>
+<p>常见的阶乘算法</p>
+<p>for循环</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> num = <span class="number">1</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</div><div class="line">    num=num*i</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(num)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>递归</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">  </div><div class="line">  <span class="keyword">if</span>(n&lt;=<span class="number">1</span>)&#123;</div><div class="line">      <span class="keyword">return</span> <span class="number">1</span></div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">      <span class="keyword">return</span> n*mul(n<span class="number">-1</span>)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>递归代码写起来比较接近语义化  容易理解,比如阶乘 就是求 n * !(n-1)</p>
+<p>虽然递归代码看起来简洁，但是执行效率很低，他的执行顺序是从外到里，当满足结束条件时，再依次从里到外执行</p>
+<p>例如阶乘 的 执行过程 (每次执行都要等待下一次执行结果返回)</p>
+<p>执行mul(4) –&gt;  4*mul(3)   此时代码会等待mul(3)的执行结果</p>
+<p>执行mul(3) –&gt;  3*mul(2)   等待mul(2)</p>
+<p>执行mul(2) –&gt;  2*mul(1)   等待mul(1)</p>
+<p>执行mul(1) –&gt;  return 1   到达结束条件，得到mul(1)的值 开始依次向外返回值</p>
+<p>mul(2)   –&gt;  2*mul(1)  –&gt;  2</p>
+<p>mul(3)   –&gt;  3*mul(2)  –&gt;  6</p>
+<p>mul(4)   –&gt;  4*mul(3)  –&gt;  24</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;递归的用法&quot;&gt;&lt;a href=&quot;#递归的用法&quot; class=&quot;headerlink&quot; title=&quot;递归的用法&quot;&gt;&lt;/a&gt;递归的用法&lt;/h3&gt;&lt;p&gt;递归即 函数自己调用自己，递归必须有结束条件&lt;/p&gt;
+&lt;p&gt;常见的阶乘算法&lt;/p&gt;
+&lt;p&gt;for循环&lt;/p&gt;
+&lt;fi
     
     </summary>
     
@@ -615,35 +655,39 @@
   </entry>
   
   <entry>
-    <title>javascript-原型原型链</title>
-    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E5%8E%9F%E5%9E%8B%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
-    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-原型原型链/</id>
+    <title>javascript-立即执行函数</title>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-立即执行函数/</id>
     <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-01-14T07:54:20.000Z</updated>
+    <updated>2020-01-14T07:54:14.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="关于原型"><a href="#关于原型" class="headerlink" title="关于原型"></a>关于原型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name</div><div class="line">&#125;</div><div class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"tom"</span>)</div><div class="line">person1.say()</div></pre></td></tr></table></figure>
-<p>Person.prototype 是Person构造函数实例化对象(person1)的原型对象</p>
-<p>ps person1.<strong>proto</strong>  同样指向自己的原型对象  = Person.prototype<br>   person1.constructor  (Person.prototype.constructor) 查看所属构造函数  -&gt;  Person    </p>
-<p>实例化对象可以访问到原型上的属性方法，当然会优先在自身寻找属性方法，自身找不到会向上从原型查找</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Grand</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">Grand.prototype.lastName = <span class="string">'sean'</span></div><div class="line"><span class="keyword">var</span> grand = <span class="keyword">new</span> Grand()</div><div class="line"></div><div class="line">Father.prototype = grand</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">'tom'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> father = <span class="keyword">new</span> Father()</div><div class="line"></div><div class="line">Son.prototype=father</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">'kim'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> son = <span class="keyword">new</span> Son()</div></pre></td></tr></table></figure>
-<p>原型链的查找过程类似于作用域链，就近查找属性</p>
-<p>son.lastName  -&gt; sean</p>
-<p>实例对象son中没有lastName,因此他会一路向上查找  到 grand</p>
-<p>-&gt; 原型链</p>
-<p>所有对象最终都是指向 Object.prototype , Object.prototype 没有原型对象，查找到最终结果为null</p>
+    <content type="html"><![CDATA[<h3 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h3><p>单独来说说立即执行函数</p>
+<p>通常的格式</p>
+<p>(function(){}())   //w3c推荐</p>
+<p>(function(){})()</p>
+<p>好处是可以立即执行，通常如果一个函数只执行一次  就推荐使用立即执行函数</p>
+<p>立即执行函数为匿名函数，即便具名了也不能通过函数名访问到</p>
+<h2 id="有趣的地方"><a href="#有趣的地方" class="headerlink" title="有趣的地方"></a>有趣的地方</h2><p>函数后的()为执行符号   只有表达式才能被执行符号执行–函数外层括号将 函数表达式化了</p>
+<p>因此</p>
+<p>var test = function(){console.log(1)}()</p>
+<p>是可以执行的 </p>
 <ul>
-<li>例外 Object.create(原型) 所创建的对象</li>
+<li>function(){console.log(1)}()  </li>
 </ul>
-<p>番外  new一个对象的时候  到底做了什么？</p>
-<p>1.创建一个空对象，作为将要返回的实例对象 </p>
-<p>2.将空对象的原型指向构造函数的prototype属性，也就是构造函数的prototype属性。 </p>
-<p>3.将空对象赋值给构造函数内部的this关键字，也就是this关键字会指向实例对象。 </p>
-<p>4.开始执行构造函数内部的代码。   返回对象</p>
+<ul>
+<li>function(){console.log(1)}()</li>
+</ul>
+<p>！ function(){console.log(1)}()</p>
+<p>false || function(){console.log(1)}()</p>
+<p>true &amp;&amp; function(){console.log(1)}()</p>
+<p>这样也是可以立即执行的</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;关于原型&quot;&gt;&lt;a href=&quot;#关于原型&quot; class=&quot;headerlink&quot; title=&quot;关于原型&quot;&gt;&lt;/a&gt;关于原型&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;
+      &lt;h3 id=&quot;立即执行函数&quot;&gt;&lt;a href=&quot;#立即执行函数&quot; class=&quot;headerlink&quot; title=&quot;立即执行函数&quot;&gt;&lt;/a&gt;立即执行函数&lt;/h3&gt;&lt;p&gt;单独来说说立即执行函数&lt;/p&gt;
+&lt;p&gt;通常的格式&lt;/p&gt;
+&lt;p&gt;(function(){}())   //w
     
     </summary>
     
@@ -740,91 +784,6 @@
   </entry>
   
   <entry>
-    <title>javascript-继承</title>
-    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E7%BB%A7%E6%89%BF/"/>
-    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-继承/</id>
-    <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-04-26T14:35:59.372Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="继承-extend"><a href="#继承-extend" class="headerlink" title="继承 (extend)"></a>继承 (extend)</h3><h2 id="1-原型链继承"><a href="#1-原型链继承" class="headerlink" title="1 原型链继承"></a>1 原型链继承</h2><p>缺点 </p>
-<p>无法实现多继承</p>
-<p>原型对象的所有属性被所有实例共享</p>
-<p>创建子类实例时，无法向父类构造函数传参</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Father.prototype.lastName = <span class="string">"sean"</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.hobby = [<span class="string">'抽烟'</span>,<span class="string">'喝酒'</span>,<span class="string">'烫头'</span>]</div><div class="line">&#125;</div><div class="line">Child.prototype = <span class="keyword">new</span> Father()   <span class="comment">//子类的原型为父类的实例对象</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Child()</div><div class="line"><span class="keyword">var</span> c1 = <span class="keyword">new</span> Child()   <span class="comment">//再new一个实例</span></div><div class="line">c.hobby[<span class="number">0</span>] = <span class="string">"打牌"</span>    <span class="comment">//改变继承自父类的引用属性</span></div><div class="line">c1.hobby   <span class="comment">//["打牌", "喝酒", "烫头"]   如 父类 有一个属性为引用类型, 那么一个实例c改变继承的这个属性值，其他实例也会跟着改变</span></div></pre></td></tr></table></figure>
-<ul>
-<li>子类继承父类的属性和方法是将父类的私有属性和公有方法都作为自己的公有属性和方法，我们都知道在操作基本数据类型的时候操作的是值，在操作引用数据类型的时候操作的是地址，如果说父类的私有属性中有引用类型的属性，那它被子类继承的时候会作为公有属性，这样子类1操作这个属性的时候，就会影响到子类2。</li>
-</ul>
-<h2 id="2-构造函数继承"><a href="#2-构造函数继承" class="headerlink" title="2 构造函数继承"></a>2 构造函数继承</h2><p>缺点 </p>
-<p>实例并不是父类的实例，只是子类的实例 (不是真正的继承 只是通过call借用的父类的属性方法)</p>
-<p>无法实现函数复用 每个子类都有父类实例函数的副本，影响性能</p>
-<p>只能继承父类的实例属性和方法，不能继承原型属性和方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params">name,lastName</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name  </div><div class="line">    <span class="keyword">this</span>.lastName = lastName</div><div class="line">    <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Father.prototype.setAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="string">"111"</span>)&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    Father.call(<span class="keyword">this</span>,name)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Child(<span class="string">"tom"</span>)</div><div class="line"></div><div class="line"><span class="comment">//c.setAge()  //is not a function  只能继承父类的实例属性和方法，不能继承原型属性和方法</span></div></pre></td></tr></table></figure>
-<h2 id="4-原型链-构造函数继承"><a href="#4-原型链-构造函数继承" class="headerlink" title="4 原型链+构造函数继承"></a>4 原型链+构造函数继承</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name,</div><div class="line">  <span class="keyword">this</span>.hobby = [<span class="string">'抽烟'</span>,<span class="string">'喝酒'</span>,<span class="string">'烫头'</span>]</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span> (<span class="params">name, age</span>) </span>&#123;</div><div class="line">  Person.call(<span class="keyword">this</span>, name)</div><div class="line">  <span class="keyword">this</span>.age = age</div><div class="line">&#125;</div><div class="line"></div><div class="line">Student.prototype = <span class="keyword">new</span> Person() </div><div class="line"></div><div class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> Student(<span class="string">'god'</span>,<span class="string">'2000'</span>)</div><div class="line">consol.log(s1)</div></pre></td></tr></table></figure>
-<p>这个组合继承的缺点是会调用两次父构造函数，一次是 Student.prototype = new Person()  ，一次是 var s1 = new Student() 的时候执行 Person.call(this, name, age) </p>
-<p>还有其他多种继承方案  基本都是原型链+构造函数组合继承，但都不完美  就不多说了</p>
-<p>下为目前比较完美的组合继承方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name,</div><div class="line">  <span class="keyword">this</span>.age = age</div><div class="line">  <span class="keyword">this</span>.hobby = [<span class="string">'抽烟'</span>,<span class="string">'喝酒'</span>,<span class="string">'烫头'</span>]</div><div class="line">&#125;</div><div class="line">Person.prototype.setAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"111"</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span> (<span class="params">name, age, price</span>) </span>&#123;</div><div class="line">  Person.call(<span class="keyword">this</span>, name, age)</div><div class="line">  <span class="keyword">this</span>.price = price</div><div class="line">  <span class="keyword">this</span>.setScore = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Student.prototype = <span class="built_in">Object</span>.create(Person.prototype)<span class="comment">//核心代码</span></div><div class="line">Student.prototype.constructor = Student<span class="comment">//核心代码</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> Student(<span class="string">'Tom'</span>, <span class="number">20</span>, <span class="number">15000</span>)</div><div class="line"><span class="built_in">console</span>.log(s1 <span class="keyword">instanceof</span> Student, s1 <span class="keyword">instanceof</span> Person) <span class="comment">// true true</span></div><div class="line"><span class="built_in">console</span>.log(s1.constructor) <span class="comment">//Student</span></div><div class="line"><span class="built_in">console</span>.log(s1)</div></pre></td></tr></table></figure>
-<h2 id="ES6中class-的继承"><a href="#ES6中class-的继承" class="headerlink" title="ES6中class 的继承"></a>ES6中class 的继承</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">  <span class="comment">//调用类的构造方法</span></div><div class="line">  <span class="keyword">constructor</span>(name, age) &#123;</div><div class="line">    <span class="keyword">this</span>.name = name</div><div class="line">    <span class="keyword">this</span>.age = age</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//定义一般的方法</span></div><div class="line">  showName () &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"调用父类的方法"</span>)</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name, <span class="keyword">this</span>.age);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> Person(<span class="string">'kobe'</span>, <span class="number">39</span>)</div><div class="line"><span class="built_in">console</span>.log(p1)</div><div class="line"><span class="comment">//定义一个子类</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(name, age, salary) &#123;</div><div class="line">    <span class="keyword">super</span>(name, age)<span class="comment">//通过super调用父类的构造方法</span></div><div class="line">    <span class="keyword">this</span>.salary = salary</div><div class="line">  &#125;</div><div class="line">  showName () &#123;<span class="comment">//在子类自身定义方法</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"调用子类的方法"</span>)</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name, <span class="keyword">this</span>.age, <span class="keyword">this</span>.salary);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> s1 = <span class="keyword">new</span> Student(<span class="string">'wade'</span>, <span class="number">38</span>, <span class="number">1000000000</span>)</div><div class="line"><span class="built_in">console</span>.log(s1)</div><div class="line">s1.showName()</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;继承-extend&quot;&gt;&lt;a href=&quot;#继承-extend&quot; class=&quot;headerlink&quot; title=&quot;继承 (extend)&quot;&gt;&lt;/a&gt;继承 (extend)&lt;/h3&gt;&lt;h2 id=&quot;1-原型链继承&quot;&gt;&lt;a href=&quot;#1-原型链继承&quot; class
-    
-    </summary>
-    
-      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript-立即执行函数</title>
-    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/"/>
-    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-立即执行函数/</id>
-    <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-01-14T07:54:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h3><p>单独来说说立即执行函数</p>
-<p>通常的格式</p>
-<p>(function(){}())   //w3c推荐</p>
-<p>(function(){})()</p>
-<p>好处是可以立即执行，通常如果一个函数只执行一次  就推荐使用立即执行函数</p>
-<p>立即执行函数为匿名函数，即便具名了也不能通过函数名访问到</p>
-<h2 id="有趣的地方"><a href="#有趣的地方" class="headerlink" title="有趣的地方"></a>有趣的地方</h2><p>函数后的()为执行符号   只有表达式才能被执行符号执行–函数外层括号将 函数表达式化了</p>
-<p>因此</p>
-<p>var test = function(){console.log(1)}()</p>
-<p>是可以执行的 </p>
-<ul>
-<li>function(){console.log(1)}()  </li>
-</ul>
-<ul>
-<li>function(){console.log(1)}()</li>
-</ul>
-<p>！ function(){console.log(1)}()</p>
-<p>false || function(){console.log(1)}()</p>
-<p>true &amp;&amp; function(){console.log(1)}()</p>
-<p>这样也是可以立即执行的</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;立即执行函数&quot;&gt;&lt;a href=&quot;#立即执行函数&quot; class=&quot;headerlink&quot; title=&quot;立即执行函数&quot;&gt;&lt;/a&gt;立即执行函数&lt;/h3&gt;&lt;p&gt;单独来说说立即执行函数&lt;/p&gt;
-&lt;p&gt;通常的格式&lt;/p&gt;
-&lt;p&gt;(function(){}())   //w
-    
-    </summary>
-    
-      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>vue-watch和computed</title>
     <link href="https://songsfw.github.io/2017/07/25/vue-watch%E5%92%8Ccomputed/"/>
     <id>https://songsfw.github.io/2017/07/25/vue-watch和computed/</id>
@@ -869,6 +828,45 @@
   </entry>
   
   <entry>
+    <title>前端通过http-proxy-middleware代理跨域</title>
+    <link href="https://songsfw.github.io/2017/07/25/%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%BB%A3%E7%90%86%E8%B7%A8%E5%9F%9F/"/>
+    <id>https://songsfw.github.io/2017/07/25/前端本地开发代理跨域/</id>
+    <published>2017-07-25T02:24:00.000Z</published>
+    <updated>2020-03-10T08:01:24.702Z</updated>
+    
+    <content type="html"><![CDATA[<p>前端在本地开发时有时会遇到跨域问题，可以通过express起服务器结合http-proxy-middleware代理跨域</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">const</span> timeout = <span class="built_in">require</span>(<span class="string">'connect-timeout'</span>);</div><div class="line"><span class="keyword">const</span> &#123; createProxyMiddleware &#125; = <span class="built_in">require</span>(<span class="string">'http-proxy-middleware'</span>); <span class="comment">//1.0之后的http-proxy-middleware插件需要用这么引入，网上很多教程还是老的，所以会调不通</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> app = express();</div><div class="line"><span class="comment">// 这里从环境变量读取配置，方便命令行启动</span></div><div class="line"><span class="comment">// HOST 指目标地址</span></div><div class="line"><span class="comment">// PORT 服务端口</span></div><div class="line"><span class="keyword">const</span> &#123; HOST = <span class="string">'https://newsapi.yiche.com'</span>, PORT = <span class="string">'9000'</span> &#125; = process.env;</div><div class="line"></div><div class="line"><span class="comment">// 超时时间</span></div><div class="line"><span class="keyword">const</span> TIME_OUT = <span class="number">3000</span> * <span class="number">1e3</span>;</div><div class="line"></div><div class="line"><span class="comment">// 设置端口</span></div><div class="line">app.set(<span class="string">'port'</span>, PORT);</div><div class="line"></div><div class="line"><span class="comment">//设置超时</span></div><div class="line">app.use(timeout(TIME_OUT));</div><div class="line">app.use(<span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span> (!req.timedout) next();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 静态页面</span></div><div class="line"><span class="comment">// 这里一般设置你的静态资源路径</span></div><div class="line">app.use(express.static(<span class="string">'public'</span>))</div><div class="line"></div><div class="line"><span class="comment">// 反向代理（这里把需要进行反代的路径配置到这里即可）</span></div><div class="line"><span class="keyword">let</span> opts = &#123;</div><div class="line">   <span class="attr">target</span>: HOST , </div><div class="line">   <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//代理/liveapp开始的接口地址</span></div><div class="line">app.use(createProxyMiddleware(<span class="string">'/liveapp'</span>, opts));</div><div class="line"></div><div class="line"><span class="comment">// 监听端口</span></div><div class="line">app.listen(app.get(<span class="string">'port'</span>), () =&gt; &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">`server running @<span class="subst">$&#123;app.get(<span class="string">'port'</span>)&#125;</span>`</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>前端ajax请求</p>
+<pre><code class="js">$.ajax({
+  <span class="attr">type</span>: <span class="string">"get"</span>,
+  <span class="attr">url</span>: <span class="string">"/liveapp/live/enter/"</span>,
+  <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>{
+    <span class="built_in">console</span>.log(data)
+  },
+  <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>{
+    <span class="built_in">console</span>.log(res);
+  }
+});
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前端在本地开发时有时会遇到跨域问题，可以通过express起服务器结合http-proxy-middleware代理跨域&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
+    
+    </summary>
+    
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="前端" scheme="https://songsfw.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="跨域" scheme="https://songsfw.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>指针及深浅复制</title>
     <link href="https://songsfw.github.io/2017/07/25/%E6%8C%87%E9%92%88%E5%8F%8A%E6%B7%B1%E6%B5%85%E5%A4%8D%E5%88%B6/"/>
     <id>https://songsfw.github.io/2017/07/25/指针及深浅复制/</id>
@@ -909,41 +907,43 @@
   </entry>
   
   <entry>
-    <title>前端通过http-proxy-middleware代理跨域</title>
-    <link href="https://songsfw.github.io/2017/07/25/%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%BB%A3%E7%90%86%E8%B7%A8%E5%9F%9F/"/>
-    <id>https://songsfw.github.io/2017/07/25/前端本地开发代理跨域/</id>
+    <title>javascript-继承</title>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E7%BB%A7%E6%89%BF/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-继承/</id>
     <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-03-10T08:01:24.702Z</updated>
+    <updated>2020-04-26T14:35:59.372Z</updated>
     
-    <content type="html"><![CDATA[<p>前端在本地开发时有时会遇到跨域问题，可以通过express起服务器结合http-proxy-middleware代理跨域</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">const</span> timeout = <span class="built_in">require</span>(<span class="string">'connect-timeout'</span>);</div><div class="line"><span class="keyword">const</span> &#123; createProxyMiddleware &#125; = <span class="built_in">require</span>(<span class="string">'http-proxy-middleware'</span>); <span class="comment">//1.0之后的http-proxy-middleware插件需要用这么引入，网上很多教程还是老的，所以会调不通</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> app = express();</div><div class="line"><span class="comment">// 这里从环境变量读取配置，方便命令行启动</span></div><div class="line"><span class="comment">// HOST 指目标地址</span></div><div class="line"><span class="comment">// PORT 服务端口</span></div><div class="line"><span class="keyword">const</span> &#123; HOST = <span class="string">'https://newsapi.yiche.com'</span>, PORT = <span class="string">'9000'</span> &#125; = process.env;</div><div class="line"></div><div class="line"><span class="comment">// 超时时间</span></div><div class="line"><span class="keyword">const</span> TIME_OUT = <span class="number">3000</span> * <span class="number">1e3</span>;</div><div class="line"></div><div class="line"><span class="comment">// 设置端口</span></div><div class="line">app.set(<span class="string">'port'</span>, PORT);</div><div class="line"></div><div class="line"><span class="comment">//设置超时</span></div><div class="line">app.use(timeout(TIME_OUT));</div><div class="line">app.use(<span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span> (!req.timedout) next();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 静态页面</span></div><div class="line"><span class="comment">// 这里一般设置你的静态资源路径</span></div><div class="line">app.use(express.static(<span class="string">'public'</span>))</div><div class="line"></div><div class="line"><span class="comment">// 反向代理（这里把需要进行反代的路径配置到这里即可）</span></div><div class="line"><span class="keyword">let</span> opts = &#123;</div><div class="line">   <span class="attr">target</span>: HOST , </div><div class="line">   <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//代理/liveapp开始的接口地址</span></div><div class="line">app.use(createProxyMiddleware(<span class="string">'/liveapp'</span>, opts));</div><div class="line"></div><div class="line"><span class="comment">// 监听端口</span></div><div class="line">app.listen(app.get(<span class="string">'port'</span>), () =&gt; &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">`server running @<span class="subst">$&#123;app.get(<span class="string">'port'</span>)&#125;</span>`</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>前端ajax请求</p>
-<pre><code class="js">$.ajax({
-  <span class="attr">type</span>: <span class="string">"get"</span>,
-  <span class="attr">url</span>: <span class="string">"/liveapp/live/enter/"</span>,
-  <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>{
-    <span class="built_in">console</span>.log(data)
-  },
-  <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>{
-    <span class="built_in">console</span>.log(res);
-  }
-});
-</code></pre>
+    <content type="html"><![CDATA[<h3 id="继承-extend"><a href="#继承-extend" class="headerlink" title="继承 (extend)"></a>继承 (extend)</h3><h2 id="1-原型链继承"><a href="#1-原型链继承" class="headerlink" title="1 原型链继承"></a>1 原型链继承</h2><p>缺点 </p>
+<p>无法实现多继承</p>
+<p>原型对象的所有属性被所有实例共享</p>
+<p>创建子类实例时，无法向父类构造函数传参</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Father.prototype.lastName = <span class="string">"sean"</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.hobby = [<span class="string">'抽烟'</span>,<span class="string">'喝酒'</span>,<span class="string">'烫头'</span>]</div><div class="line">&#125;</div><div class="line">Child.prototype = <span class="keyword">new</span> Father()   <span class="comment">//子类的原型为父类的实例对象</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Child()</div><div class="line"><span class="keyword">var</span> c1 = <span class="keyword">new</span> Child()   <span class="comment">//再new一个实例</span></div><div class="line">c.hobby[<span class="number">0</span>] = <span class="string">"打牌"</span>    <span class="comment">//改变继承自父类的引用属性</span></div><div class="line">c1.hobby   <span class="comment">//["打牌", "喝酒", "烫头"]   如 父类 有一个属性为引用类型, 那么一个实例c改变继承的这个属性值，其他实例也会跟着改变</span></div></pre></td></tr></table></figure>
+<ul>
+<li>子类继承父类的属性和方法是将父类的私有属性和公有方法都作为自己的公有属性和方法，我们都知道在操作基本数据类型的时候操作的是值，在操作引用数据类型的时候操作的是地址，如果说父类的私有属性中有引用类型的属性，那它被子类继承的时候会作为公有属性，这样子类1操作这个属性的时候，就会影响到子类2。</li>
+</ul>
+<h2 id="2-构造函数继承"><a href="#2-构造函数继承" class="headerlink" title="2 构造函数继承"></a>2 构造函数继承</h2><p>缺点 </p>
+<p>实例并不是父类的实例，只是子类的实例 (不是真正的继承 只是通过call借用的父类的属性方法)</p>
+<p>无法实现函数复用 每个子类都有父类实例函数的副本，影响性能</p>
+<p>只能继承父类的实例属性和方法，不能继承原型属性和方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params">name,lastName</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name  </div><div class="line">    <span class="keyword">this</span>.lastName = lastName</div><div class="line">    <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Father.prototype.setAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="string">"111"</span>)&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    Father.call(<span class="keyword">this</span>,name)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Child(<span class="string">"tom"</span>)</div><div class="line"></div><div class="line"><span class="comment">//c.setAge()  //is not a function  只能继承父类的实例属性和方法，不能继承原型属性和方法</span></div></pre></td></tr></table></figure>
+<h2 id="4-原型链-构造函数继承"><a href="#4-原型链-构造函数继承" class="headerlink" title="4 原型链+构造函数继承"></a>4 原型链+构造函数继承</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name,</div><div class="line">  <span class="keyword">this</span>.hobby = [<span class="string">'抽烟'</span>,<span class="string">'喝酒'</span>,<span class="string">'烫头'</span>]</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span> (<span class="params">name, age</span>) </span>&#123;</div><div class="line">  Person.call(<span class="keyword">this</span>, name)</div><div class="line">  <span class="keyword">this</span>.age = age</div><div class="line">&#125;</div><div class="line"></div><div class="line">Student.prototype = <span class="keyword">new</span> Person() </div><div class="line"></div><div class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> Student(<span class="string">'god'</span>,<span class="string">'2000'</span>)</div><div class="line">consol.log(s1)</div></pre></td></tr></table></figure>
+<p>这个组合继承的缺点是会调用两次父构造函数，一次是 Student.prototype = new Person()  ，一次是 var s1 = new Student() 的时候执行 Person.call(this, name, age) </p>
+<p>还有其他多种继承方案  基本都是原型链+构造函数组合继承，但都不完美  就不多说了</p>
+<p>下为目前比较完美的组合继承方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name,</div><div class="line">  <span class="keyword">this</span>.age = age</div><div class="line">  <span class="keyword">this</span>.hobby = [<span class="string">'抽烟'</span>,<span class="string">'喝酒'</span>,<span class="string">'烫头'</span>]</div><div class="line">&#125;</div><div class="line">Person.prototype.setAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"111"</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span> (<span class="params">name, age, price</span>) </span>&#123;</div><div class="line">  Person.call(<span class="keyword">this</span>, name, age)</div><div class="line">  <span class="keyword">this</span>.price = price</div><div class="line">  <span class="keyword">this</span>.setScore = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Student.prototype = <span class="built_in">Object</span>.create(Person.prototype)<span class="comment">//核心代码</span></div><div class="line">Student.prototype.constructor = Student<span class="comment">//核心代码</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> Student(<span class="string">'Tom'</span>, <span class="number">20</span>, <span class="number">15000</span>)</div><div class="line"><span class="built_in">console</span>.log(s1 <span class="keyword">instanceof</span> Student, s1 <span class="keyword">instanceof</span> Person) <span class="comment">// true true</span></div><div class="line"><span class="built_in">console</span>.log(s1.constructor) <span class="comment">//Student</span></div><div class="line"><span class="built_in">console</span>.log(s1)</div></pre></td></tr></table></figure>
+<h2 id="ES6中class-的继承"><a href="#ES6中class-的继承" class="headerlink" title="ES6中class 的继承"></a>ES6中class 的继承</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">  <span class="comment">//调用类的构造方法</span></div><div class="line">  <span class="keyword">constructor</span>(name, age) &#123;</div><div class="line">    <span class="keyword">this</span>.name = name</div><div class="line">    <span class="keyword">this</span>.age = age</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//定义一般的方法</span></div><div class="line">  showName () &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"调用父类的方法"</span>)</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name, <span class="keyword">this</span>.age);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> Person(<span class="string">'kobe'</span>, <span class="number">39</span>)</div><div class="line"><span class="built_in">console</span>.log(p1)</div><div class="line"><span class="comment">//定义一个子类</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(name, age, salary) &#123;</div><div class="line">    <span class="keyword">super</span>(name, age)<span class="comment">//通过super调用父类的构造方法</span></div><div class="line">    <span class="keyword">this</span>.salary = salary</div><div class="line">  &#125;</div><div class="line">  showName () &#123;<span class="comment">//在子类自身定义方法</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"调用子类的方法"</span>)</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name, <span class="keyword">this</span>.age, <span class="keyword">this</span>.salary);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> s1 = <span class="keyword">new</span> Student(<span class="string">'wade'</span>, <span class="number">38</span>, <span class="number">1000000000</span>)</div><div class="line"><span class="built_in">console</span>.log(s1)</div><div class="line">s1.showName()</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;前端在本地开发时有时会遇到跨域问题，可以通过express起服务器结合http-proxy-middleware代理跨域&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
+      &lt;h3 id=&quot;继承-extend&quot;&gt;&lt;a href=&quot;#继承-extend&quot; class=&quot;headerlink&quot; title=&quot;继承 (extend)&quot;&gt;&lt;/a&gt;继承 (extend)&lt;/h3&gt;&lt;h2 id=&quot;1-原型链继承&quot;&gt;&lt;a href=&quot;#1-原型链继承&quot; class
     
     </summary>
     
       <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="前端" scheme="https://songsfw.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="跨域" scheme="https://songsfw.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
