@@ -4,9 +4,9 @@
   <subtitle>Live Curious</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://songsfw.github.io/"/>
+  <link href="https://songsfw.github.io/"/>
   <updated>2018-04-23T17:28:01.226Z</updated>
-  <id>http://songsfw.github.io/</id>
+  <id>https://songsfw.github.io/</id>
   
   <author>
     <name>Codecat</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>记第一次前后端分离</title>
-    <link href="http://songsfw.github.io/2017/11/30/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"/>
-    <id>http://songsfw.github.io/2017/11/30/记一次前后端分离/</id>
+    <link href="https://songsfw.github.io/2017/11/30/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"/>
+    <id>https://songsfw.github.io/2017/11/30/记一次前后端分离/</id>
     <published>2017-11-30T05:29:00.000Z</published>
     <updated>2018-04-23T17:28:01.226Z</updated>
     
@@ -65,52 +65,17 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="前端开发" scheme="http://songsfw.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript-callee caller</title>
-    <link href="http://songsfw.github.io/2017/07/25/JavaScript-callee%20caller/"/>
-    <id>http://songsfw.github.io/2017/07/25/JavaScript-callee caller/</id>
-    <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-02-10T02:13:58.193Z</updated>
-    
-    <content type="html"><![CDATA[<p>某次面试问到call是做什么的，</p>
-<p>谁知道答完后  又问  callee  caller呢？</p>
-<p>当时是懵的，只是隐约记得是被废弃的方法</p>
-<h4 id="caller"><a href="#caller" class="headerlink" title="caller"></a>caller</h4><p>Funcion对象的方法，返回调用指定函数的函数</p>
-<p>如果一个函数f是在全局作用域内被调用的,则f.caller为null,相反,如果一个函数是在另外一个函数作用域内被调用的,则f.caller指向调用它的那个函数。<br>该属性的常用形式arguments.callee.caller替代了被废弃的 arguments.caller</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunc</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (myFunc.caller == <span class="literal">null</span>) &#123;</div><div class="line">      <span class="built_in">console</span>.log (<span class="string">"该函数在全局作用域内被调用!"</span>);</div><div class="line">   &#125; <span class="keyword">else</span></div><div class="line">      <span class="built_in">console</span>.log (<span class="string">"调用我的是函数是"</span> + myFunc.caller);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    myFunc()   <span class="comment">//funcion fn1()&#123; myFunc() &#125;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="callee"><a href="#callee" class="headerlink" title="callee"></a>callee</h4><p>arguments的一个属性，返回正被执行的Function对象本身，也就是所指定的Function对象的正文</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunc</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee)</div><div class="line">&#125;</div><div class="line">myFunc()  <span class="comment">// myFunc() &#123;console.log(arguments.callee)&#125;</span></div></pre></td></tr></table></figure>
-<p>这个在匿名函数递归的时候很有用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i=<span class="number">0</span></div><div class="line"><span class="keyword">var</span> myFunc = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  i++</div><div class="line">  <span class="built_in">console</span>.log(i)</div><div class="line">  <span class="keyword">if</span>(i&lt;<span class="number">10</span>)&#123;</div><div class="line">    <span class="built_in">arguments</span>.callee()</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">myFunc()</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;某次面试问到call是做什么的，&lt;/p&gt;
-&lt;p&gt;谁知道答完后  又问  callee  caller呢？&lt;/p&gt;
-&lt;p&gt;当时是懵的，只是隐约记得是被废弃的方法&lt;/p&gt;
-&lt;h4 id=&quot;caller&quot;&gt;&lt;a href=&quot;#caller&quot; class=&quot;headerlink&quot; 
-    
-    </summary>
-    
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript-call and apply</title>
-    <link href="http://songsfw.github.io/2017/07/25/ES6-%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0/"/>
-    <id>http://songsfw.github.io/2017/07/25/ES6-生成器函数/</id>
+    <link href="https://songsfw.github.io/2017/07/25/ES6-%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0/"/>
+    <id>https://songsfw.github.io/2017/07/25/ES6-生成器函数/</id>
     <published>2017-07-25T02:24:00.000Z</published>
     <updated>2020-01-19T06:26:20.000Z</updated>
     
@@ -141,17 +106,17 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>javascript-reduce</title>
-    <link href="http://songsfw.github.io/2017/07/25/JavaScript-reduce/"/>
-    <id>http://songsfw.github.io/2017/07/25/JavaScript-reduce/</id>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript-reduce/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript-reduce/</id>
     <published>2017-07-25T02:24:00.000Z</published>
     <updated>2020-02-27T13:57:49.977Z</updated>
     
@@ -178,17 +143,17 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>javascript-数组</title>
-    <link href="http://songsfw.github.io/2017/07/25/JavaScript-%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/"/>
-    <id>http://songsfw.github.io/2017/07/25/JavaScript-数组操作/</id>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript-%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript-数组操作/</id>
     <published>2017-07-25T02:24:00.000Z</published>
     <updated>2020-01-20T07:06:14.000Z</updated>
     
@@ -231,58 +196,17 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript-递归</title>
-    <link href="http://songsfw.github.io/2017/07/25/JavaScript-%E9%80%92%E5%BD%92/"/>
-    <id>http://songsfw.github.io/2017/07/25/JavaScript-递归/</id>
-    <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-01-19T06:35:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="递归的用法"><a href="#递归的用法" class="headerlink" title="递归的用法"></a>递归的用法</h3><p>递归即 函数自己调用自己，递归必须有结束条件</p>
-<p>常见的阶乘算法</p>
-<p>for循环</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> num = <span class="number">1</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</div><div class="line">    num=num*i</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(num)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>递归</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">  </div><div class="line">  <span class="keyword">if</span>(n&lt;=<span class="number">1</span>)&#123;</div><div class="line">      <span class="keyword">return</span> <span class="number">1</span></div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">      <span class="keyword">return</span> n*mul(n<span class="number">-1</span>)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>递归代码写起来比较接近语义化  容易理解,比如阶乘 就是求 n * !(n-1)</p>
-<p>虽然递归代码看起来简洁，但是执行效率很低，他的执行顺序是从外到里，当满足结束条件时，再依次从里到外执行</p>
-<p>例如阶乘 的 执行过程 (每次执行都要等待下一次执行结果返回)</p>
-<p>执行mul(4) –&gt;  4*mul(3)   此时代码会等待mul(3)的执行结果</p>
-<p>执行mul(3) –&gt;  3*mul(2)   等待mul(2)</p>
-<p>执行mul(2) –&gt;  2*mul(1)   等待mul(1)</p>
-<p>执行mul(1) –&gt;  return 1   到达结束条件，得到mul(1)的值 开始依次向外返回值</p>
-<p>mul(2)   –&gt;  2*mul(1)  –&gt;  2</p>
-<p>mul(3)   –&gt;  3*mul(2)  –&gt;  6</p>
-<p>mul(4)   –&gt;  4*mul(3)  –&gt;  24</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;递归的用法&quot;&gt;&lt;a href=&quot;#递归的用法&quot; class=&quot;headerlink&quot; title=&quot;递归的用法&quot;&gt;&lt;/a&gt;递归的用法&lt;/h3&gt;&lt;p&gt;递归即 函数自己调用自己，递归必须有结束条件&lt;/p&gt;
-&lt;p&gt;常见的阶乘算法&lt;/p&gt;
-&lt;p&gt;for循环&lt;/p&gt;
-&lt;fi
-    
-    </summary>
-    
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>javascript-事件循环机制</title>
-    <link href="http://songsfw.github.io/2017/07/25/JavaScript-%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"/>
-    <id>http://songsfw.github.io/2017/07/25/JavaScript-事件循环/</id>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript-%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript-事件循环/</id>
     <published>2017-07-25T02:24:00.000Z</published>
     <updated>2020-04-26T16:35:55.930Z</updated>
     
@@ -341,77 +265,17 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript-call and apply</title>
-    <link href="http://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-call%20and%20apply/"/>
-    <id>http://songsfw.github.io/2017/07/25/JavaScript入门-call and apply/</id>
-    <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-04-14T08:59:47.052Z</updated>
-    
-    <content type="html"><![CDATA[<p>之前说过改变this指向有几种方法[默认,显示,隐式,new]</p>
-<p>简单说说apply call两种常用的显示方法</p>
-<ul>
-<li>在js oop中，会常常使用到apply() call(),这提供了一个更优雅的改变this指向的方法</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">cat</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">cat.prototype = &#123;</div><div class="line">    <span class="attr">food</span>:<span class="string">"fish"</span>,</div><div class="line">    <span class="attr">say</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="string">"i love "</span>+ <span class="keyword">this</span>.food)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> blackCat = <span class="keyword">new</span> cat</div><div class="line">blackCat.say()    <span class="comment">//i love fish</span></div></pre></td></tr></table></figure>
-<p>上边有一个猫对象，对象有一个say方法，现在我又有一个狗对象 whiteDog = {food:”bone”} 但是不想重新定义say方法，</p>
-<p>这时可以通过call 或 allpy方法调用 blackCat的方法，也就是将blackCat.say方法 的this指向whiteDog</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> whiteDog = &#123;<span class="attr">food</span>:<span class="string">"bone"</span>&#125;</div><div class="line">blackCat.say.call(whiteDog)   <span class="comment">//i love bone</span></div></pre></td></tr></table></figure>
-<p>call apply第一个参数为对象，唯一的区别在其他参数的传递方式</p>
-<p>func.call(obj, arg1, arg2);</p>
-<p>func.apply(obj, [arg1, arg2])</p>
-<h3 id="常用场景"><a href="#常用场景" class="headerlink" title="常用场景"></a>常用场景</h3><p>apply 可以将数组转换为参数列表</p>
-<p>例 取最值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, array);</div><div class="line"><span class="built_in">console</span>.log(max);<span class="comment">//3</span></div></pre></td></tr></table></figure>
-<ul>
-<li>PS 扩展运算符实现  Math.max(…arr)</li>
-</ul>
-<p>例 数组合并</p>
-<p>push方法没有提供push一个数组，所以可以通过apply来将数组转换为参数集合</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</div><div class="line"><span class="built_in">Array</span>.prototype.push.apply(arr1, arr2);</div><div class="line"><span class="comment">//[].push.apply(arr1,arr2)</span></div><div class="line"><span class="built_in">console</span>.log(arr1);<span class="comment">//[ 1, 2, 3, 4, 5, 6 ]</span></div></pre></td></tr></table></figure>
-<h3 id="模拟call-apply"><a href="#模拟call-apply" class="headerlink" title="模拟call apply"></a>模拟call apply</h3><p>知道call/apply的作用之后  可以试着来用js实现一个同样的功能</p>
-<p>模拟函数的主要功能就是改变this的指向    接收两个参数 (fn,…params)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Function</span>.prototype.newCall = <span class="function"><span class="keyword">function</span>(<span class="params">obj,...params</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj === <span class="string">'object'</span>) &#123;</div><div class="line">        obj = obj || <span class="built_in">window</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        obj = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">let</span> fn = <span class="built_in">Symbol</span>();    <span class="comment">//防止传进来的对象已经有同名方法</span></div><div class="line">    obj[fn] = <span class="keyword">this</span>        <span class="comment">//this==say  this指向调用newCall方法的函数对象   这里就是say函数,将say函数作为传入对象的一个属性(fn)</span></div><div class="line">    <span class="keyword">var</span> result = obj[fn](...params);</div><div class="line">    </div><div class="line">    <span class="keyword">delete</span> obj[fn];</div><div class="line">    <span class="keyword">return</span> result;   <span class="comment">//返回函数返回值</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"jayChou"</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> say = <span class="function"><span class="keyword">function</span>(<span class="params">age</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,age);</div><div class="line">    <span class="keyword">return</span> age</div><div class="line">&#125;</div><div class="line"></div><div class="line">say.newCall(person,<span class="number">12</span>);  <span class="comment">// jayChou</span></div></pre></td></tr></table></figure>
-<p>模拟apply </p>
-<p>基本上跟call一样   只是传参换成了数组</p>
-<p>Function.prototype.newCall = function(obj,arr){…}</p>
-<h3 id="扩展-bind"><a href="#扩展-bind" class="headerlink" title="扩展 bind"></a>扩展 bind</h3><p>bind 同call apply类似，都是改变函数体内this指向，不同的是bind返回的是一个函数</p>
-<p>来看一个this指向丢失的例子 </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;</div><div class="line">   <span class="attr">b</span>: <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>) </span>&#123;</div><div class="line">     <span class="built_in">console</span>.log(x,y)</div><div class="line">     <span class="built_in">console</span>.log(<span class="keyword">this</span>.c)</div><div class="line">   &#125;,</div><div class="line">   <span class="attr">c</span>:<span class="string">'haha'</span></div><div class="line"> &#125;</div><div class="line"> <span class="keyword">var</span> fn = a.b</div><div class="line"> <span class="built_in">console</span>.log(fn());   <span class="comment">//期望的输出haha 结果是 undefined  this此时指向window</span></div><div class="line"></div><div class="line"> <span class="keyword">var</span> fn2 = fn.bind(a,<span class="string">'hello'</span>)  <span class="comment">//让this重新指向a 输出haha</span></div><div class="line"> <span class="built_in">console</span>.log(fn2(<span class="string">'world'</span>))  <span class="comment">//hello world   传参</span></div></pre></td></tr></table></figure>
-<p>模拟bind  跟模拟call类似  只是返回的是函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Function</span>.prototype.newBind = <span class="function"><span class="keyword">function</span>(<span class="params">obj,...params</span>)</span>&#123;</div><div class="line">    <span class="keyword">let</span> fn = <span class="built_in">Symbol</span>();  </div><div class="line">    obj[fn] = <span class="keyword">this</span></div><div class="line">    <span class="keyword">let</span> args = [...params]</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        obj[fn](...args.concat([].slice.call(<span class="built_in">arguments</span>)))</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>bind明白了，上边的代码中有一个分步处理参数的操作，这个其实就是一个典型的函数柯里化的过程</p>
-<p>柯里化：将接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数,并且返回接受余下的参数而且返回结果的新函数。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前说过改变this指向有几种方法[默认,显示,隐式,new]&lt;/p&gt;
-&lt;p&gt;简单说说apply call两种常用的显示方法&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在js oop中，会常常使用到apply() call(),这提供了一个更优雅的改变this指向的方法&lt;/li&gt;
-&lt;/ul
-    
-    </summary>
-    
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>javascript-作用域与闭包</title>
-    <link href="http://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/"/>
-    <id>http://songsfw.github.io/2017/07/25/JavaScript入门-作用域与闭包/</id>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-作用域与闭包/</id>
     <published>2017-07-25T02:24:00.000Z</published>
     <updated>2020-01-14T07:54:26.000Z</updated>
     
@@ -502,17 +366,153 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript-callee caller</title>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript-callee%20caller/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript-callee caller/</id>
+    <published>2017-07-25T02:24:00.000Z</published>
+    <updated>2020-02-10T02:13:58.193Z</updated>
+    
+    <content type="html"><![CDATA[<p>某次面试问到call是做什么的，</p>
+<p>谁知道答完后  又问  callee  caller呢？</p>
+<p>当时是懵的，只是隐约记得是被废弃的方法</p>
+<h4 id="caller"><a href="#caller" class="headerlink" title="caller"></a>caller</h4><p>Funcion对象的方法，返回调用指定函数的函数</p>
+<p>如果一个函数f是在全局作用域内被调用的,则f.caller为null,相反,如果一个函数是在另外一个函数作用域内被调用的,则f.caller指向调用它的那个函数。<br>该属性的常用形式arguments.callee.caller替代了被废弃的 arguments.caller</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunc</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (myFunc.caller == <span class="literal">null</span>) &#123;</div><div class="line">      <span class="built_in">console</span>.log (<span class="string">"该函数在全局作用域内被调用!"</span>);</div><div class="line">   &#125; <span class="keyword">else</span></div><div class="line">      <span class="built_in">console</span>.log (<span class="string">"调用我的是函数是"</span> + myFunc.caller);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    myFunc()   <span class="comment">//funcion fn1()&#123; myFunc() &#125;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="callee"><a href="#callee" class="headerlink" title="callee"></a>callee</h4><p>arguments的一个属性，返回正被执行的Function对象本身，也就是所指定的Function对象的正文</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunc</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee)</div><div class="line">&#125;</div><div class="line">myFunc()  <span class="comment">// myFunc() &#123;console.log(arguments.callee)&#125;</span></div></pre></td></tr></table></figure>
+<p>这个在匿名函数递归的时候很有用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i=<span class="number">0</span></div><div class="line"><span class="keyword">var</span> myFunc = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  i++</div><div class="line">  <span class="built_in">console</span>.log(i)</div><div class="line">  <span class="keyword">if</span>(i&lt;<span class="number">10</span>)&#123;</div><div class="line">    <span class="built_in">arguments</span>.callee()</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">myFunc()</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;某次面试问到call是做什么的，&lt;/p&gt;
+&lt;p&gt;谁知道答完后  又问  callee  caller呢？&lt;/p&gt;
+&lt;p&gt;当时是懵的，只是隐约记得是被废弃的方法&lt;/p&gt;
+&lt;h4 id=&quot;caller&quot;&gt;&lt;a href=&quot;#caller&quot; class=&quot;headerlink&quot; 
+    
+    </summary>
+    
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript-call and apply</title>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-call%20and%20apply/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-call and apply/</id>
+    <published>2017-07-25T02:24:00.000Z</published>
+    <updated>2020-04-14T08:59:47.052Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前说过改变this指向有几种方法[默认,显示,隐式,new]</p>
+<p>简单说说apply call两种常用的显示方法</p>
+<ul>
+<li>在js oop中，会常常使用到apply() call(),这提供了一个更优雅的改变this指向的方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">cat</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">cat.prototype = &#123;</div><div class="line">    <span class="attr">food</span>:<span class="string">"fish"</span>,</div><div class="line">    <span class="attr">say</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="string">"i love "</span>+ <span class="keyword">this</span>.food)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> blackCat = <span class="keyword">new</span> cat</div><div class="line">blackCat.say()    <span class="comment">//i love fish</span></div></pre></td></tr></table></figure>
+<p>上边有一个猫对象，对象有一个say方法，现在我又有一个狗对象 whiteDog = {food:”bone”} 但是不想重新定义say方法，</p>
+<p>这时可以通过call 或 allpy方法调用 blackCat的方法，也就是将blackCat.say方法 的this指向whiteDog</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> whiteDog = &#123;<span class="attr">food</span>:<span class="string">"bone"</span>&#125;</div><div class="line">blackCat.say.call(whiteDog)   <span class="comment">//i love bone</span></div></pre></td></tr></table></figure>
+<p>call apply第一个参数为对象，唯一的区别在其他参数的传递方式</p>
+<p>func.call(obj, arg1, arg2);</p>
+<p>func.apply(obj, [arg1, arg2])</p>
+<h3 id="常用场景"><a href="#常用场景" class="headerlink" title="常用场景"></a>常用场景</h3><p>apply 可以将数组转换为参数列表</p>
+<p>例 取最值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, array);</div><div class="line"><span class="built_in">console</span>.log(max);<span class="comment">//3</span></div></pre></td></tr></table></figure>
+<ul>
+<li>PS 扩展运算符实现  Math.max(…arr)</li>
+</ul>
+<p>例 数组合并</p>
+<p>push方法没有提供push一个数组，所以可以通过apply来将数组转换为参数集合</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</div><div class="line"><span class="built_in">Array</span>.prototype.push.apply(arr1, arr2);</div><div class="line"><span class="comment">//[].push.apply(arr1,arr2)</span></div><div class="line"><span class="built_in">console</span>.log(arr1);<span class="comment">//[ 1, 2, 3, 4, 5, 6 ]</span></div></pre></td></tr></table></figure>
+<h3 id="模拟call-apply"><a href="#模拟call-apply" class="headerlink" title="模拟call apply"></a>模拟call apply</h3><p>知道call/apply的作用之后  可以试着来用js实现一个同样的功能</p>
+<p>模拟函数的主要功能就是改变this的指向    接收两个参数 (fn,…params)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Function</span>.prototype.newCall = <span class="function"><span class="keyword">function</span>(<span class="params">obj,...params</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj === <span class="string">'object'</span>) &#123;</div><div class="line">        obj = obj || <span class="built_in">window</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        obj = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">let</span> fn = <span class="built_in">Symbol</span>();    <span class="comment">//防止传进来的对象已经有同名方法</span></div><div class="line">    obj[fn] = <span class="keyword">this</span>        <span class="comment">//this==say  this指向调用newCall方法的函数对象   这里就是say函数,将say函数作为传入对象的一个属性(fn)</span></div><div class="line">    <span class="keyword">var</span> result = obj[fn](...params);</div><div class="line">    </div><div class="line">    <span class="keyword">delete</span> obj[fn];</div><div class="line">    <span class="keyword">return</span> result;   <span class="comment">//返回函数返回值</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"jayChou"</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> say = <span class="function"><span class="keyword">function</span>(<span class="params">age</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,age);</div><div class="line">    <span class="keyword">return</span> age</div><div class="line">&#125;</div><div class="line"></div><div class="line">say.newCall(person,<span class="number">12</span>);  <span class="comment">// jayChou</span></div></pre></td></tr></table></figure>
+<p>模拟apply </p>
+<p>基本上跟call一样   只是传参换成了数组</p>
+<p>Function.prototype.newCall = function(obj,arr){…}</p>
+<h3 id="扩展-bind"><a href="#扩展-bind" class="headerlink" title="扩展 bind"></a>扩展 bind</h3><p>bind 同call apply类似，都是改变函数体内this指向，不同的是bind返回的是一个函数</p>
+<p>来看一个this指向丢失的例子 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;</div><div class="line">   <span class="attr">b</span>: <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>) </span>&#123;</div><div class="line">     <span class="built_in">console</span>.log(x,y)</div><div class="line">     <span class="built_in">console</span>.log(<span class="keyword">this</span>.c)</div><div class="line">   &#125;,</div><div class="line">   <span class="attr">c</span>:<span class="string">'haha'</span></div><div class="line"> &#125;</div><div class="line"> <span class="keyword">var</span> fn = a.b</div><div class="line"> <span class="built_in">console</span>.log(fn());   <span class="comment">//期望的输出haha 结果是 undefined  this此时指向window</span></div><div class="line"></div><div class="line"> <span class="keyword">var</span> fn2 = fn.bind(a,<span class="string">'hello'</span>)  <span class="comment">//让this重新指向a 输出haha</span></div><div class="line"> <span class="built_in">console</span>.log(fn2(<span class="string">'world'</span>))  <span class="comment">//hello world   传参</span></div></pre></td></tr></table></figure>
+<p>模拟bind  跟模拟call类似  只是返回的是函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Function</span>.prototype.newBind = <span class="function"><span class="keyword">function</span>(<span class="params">obj,...params</span>)</span>&#123;</div><div class="line">    <span class="keyword">let</span> fn = <span class="built_in">Symbol</span>();  </div><div class="line">    obj[fn] = <span class="keyword">this</span></div><div class="line">    <span class="keyword">let</span> args = [...params]</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        obj[fn](...args.concat([].slice.call(<span class="built_in">arguments</span>)))</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>bind明白了，上边的代码中有一个分步处理参数的操作，这个其实就是一个典型的函数柯里化的过程</p>
+<p>柯里化：将接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数,并且返回接受余下的参数而且返回结果的新函数。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前说过改变this指向有几种方法[默认,显示,隐式,new]&lt;/p&gt;
+&lt;p&gt;简单说说apply call两种常用的显示方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在js oop中，会常常使用到apply() call(),这提供了一个更优雅的改变this指向的方法&lt;/li&gt;
+&lt;/ul
+    
+    </summary>
+    
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript-递归</title>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript-%E9%80%92%E5%BD%92/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript-递归/</id>
+    <published>2017-07-25T02:24:00.000Z</published>
+    <updated>2020-01-19T06:35:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="递归的用法"><a href="#递归的用法" class="headerlink" title="递归的用法"></a>递归的用法</h3><p>递归即 函数自己调用自己，递归必须有结束条件</p>
+<p>常见的阶乘算法</p>
+<p>for循环</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> num = <span class="number">1</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</div><div class="line">    num=num*i</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(num)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>递归</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">  </div><div class="line">  <span class="keyword">if</span>(n&lt;=<span class="number">1</span>)&#123;</div><div class="line">      <span class="keyword">return</span> <span class="number">1</span></div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">      <span class="keyword">return</span> n*mul(n<span class="number">-1</span>)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>递归代码写起来比较接近语义化  容易理解,比如阶乘 就是求 n * !(n-1)</p>
+<p>虽然递归代码看起来简洁，但是执行效率很低，他的执行顺序是从外到里，当满足结束条件时，再依次从里到外执行</p>
+<p>例如阶乘 的 执行过程 (每次执行都要等待下一次执行结果返回)</p>
+<p>执行mul(4) –&gt;  4*mul(3)   此时代码会等待mul(3)的执行结果</p>
+<p>执行mul(3) –&gt;  3*mul(2)   等待mul(2)</p>
+<p>执行mul(2) –&gt;  2*mul(1)   等待mul(1)</p>
+<p>执行mul(1) –&gt;  return 1   到达结束条件，得到mul(1)的值 开始依次向外返回值</p>
+<p>mul(2)   –&gt;  2*mul(1)  –&gt;  2</p>
+<p>mul(3)   –&gt;  3*mul(2)  –&gt;  6</p>
+<p>mul(4)   –&gt;  4*mul(3)  –&gt;  24</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;递归的用法&quot;&gt;&lt;a href=&quot;#递归的用法&quot; class=&quot;headerlink&quot; title=&quot;递归的用法&quot;&gt;&lt;/a&gt;递归的用法&lt;/h3&gt;&lt;p&gt;递归即 函数自己调用自己，递归必须有结束条件&lt;/p&gt;
+&lt;p&gt;常见的阶乘算法&lt;/p&gt;
+&lt;p&gt;for循环&lt;/p&gt;
+&lt;fi
+    
+    </summary>
+    
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>javascript-原型原型链</title>
-    <link href="http://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E5%8E%9F%E5%9E%8B%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
-    <id>http://songsfw.github.io/2017/07/25/JavaScript入门-原型原型链/</id>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E5%8E%9F%E5%9E%8B%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-原型原型链/</id>
     <published>2017-07-25T02:24:00.000Z</published>
     <updated>2020-01-14T07:54:20.000Z</updated>
     
@@ -542,17 +542,61 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript-立即执行函数</title>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-立即执行函数/</id>
+    <published>2017-07-25T02:24:00.000Z</published>
+    <updated>2020-01-14T07:54:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h3><p>单独来说说立即执行函数</p>
+<p>通常的格式</p>
+<p>(function(){}())   //w3c推荐</p>
+<p>(function(){})()</p>
+<p>好处是可以立即执行，通常如果一个函数只执行一次  就推荐使用立即执行函数</p>
+<p>立即执行函数为匿名函数，即便具名了也不能通过函数名访问到</p>
+<h2 id="有趣的地方"><a href="#有趣的地方" class="headerlink" title="有趣的地方"></a>有趣的地方</h2><p>函数后的()为执行符号   只有表达式才能被执行符号执行–函数外层括号将 函数表达式化了</p>
+<p>因此</p>
+<p>var test = function(){console.log(1)}()</p>
+<p>是可以执行的 </p>
+<ul>
+<li>function(){console.log(1)}()  </li>
+</ul>
+<ul>
+<li>function(){console.log(1)}()</li>
+</ul>
+<p>！ function(){console.log(1)}()</p>
+<p>false || function(){console.log(1)}()</p>
+<p>true &amp;&amp; function(){console.log(1)}()</p>
+<p>这样也是可以立即执行的</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;立即执行函数&quot;&gt;&lt;a href=&quot;#立即执行函数&quot; class=&quot;headerlink&quot; title=&quot;立即执行函数&quot;&gt;&lt;/a&gt;立即执行函数&lt;/h3&gt;&lt;p&gt;单独来说说立即执行函数&lt;/p&gt;
+&lt;p&gt;通常的格式&lt;/p&gt;
+&lt;p&gt;(function(){}())   //w
+    
+    </summary>
+    
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>javascript-理解this</title>
-    <link href="http://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E7%90%86%E8%A7%A3this/"/>
-    <id>http://songsfw.github.io/2017/07/25/JavaScript入门-理解this/</id>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E7%90%86%E8%A7%A3this/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-理解this/</id>
     <published>2017-07-25T02:24:00.000Z</published>
     <updated>2020-01-14T07:54:08.000Z</updated>
     
@@ -627,61 +671,56 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
-    <title>javascript-立即执行函数</title>
-    <link href="http://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/"/>
-    <id>http://songsfw.github.io/2017/07/25/JavaScript入门-立即执行函数/</id>
+    <title>前端通过http-proxy-middleware代理跨域</title>
+    <link href="https://songsfw.github.io/2017/07/25/%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%BB%A3%E7%90%86%E8%B7%A8%E5%9F%9F/"/>
+    <id>https://songsfw.github.io/2017/07/25/前端本地开发代理跨域/</id>
     <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-01-14T07:54:14.000Z</updated>
+    <updated>2020-03-10T08:01:24.702Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h3><p>单独来说说立即执行函数</p>
-<p>通常的格式</p>
-<p>(function(){}())   //w3c推荐</p>
-<p>(function(){})()</p>
-<p>好处是可以立即执行，通常如果一个函数只执行一次  就推荐使用立即执行函数</p>
-<p>立即执行函数为匿名函数，即便具名了也不能通过函数名访问到</p>
-<h2 id="有趣的地方"><a href="#有趣的地方" class="headerlink" title="有趣的地方"></a>有趣的地方</h2><p>函数后的()为执行符号   只有表达式才能被执行符号执行–函数外层括号将 函数表达式化了</p>
-<p>因此</p>
-<p>var test = function(){console.log(1)}()</p>
-<p>是可以执行的 </p>
-<ul>
-<li>function(){console.log(1)}()  </li>
-</ul>
-<ul>
-<li>function(){console.log(1)}()</li>
-</ul>
-<p>！ function(){console.log(1)}()</p>
-<p>false || function(){console.log(1)}()</p>
-<p>true &amp;&amp; function(){console.log(1)}()</p>
-<p>这样也是可以立即执行的</p>
+    <content type="html"><![CDATA[<p>前端在本地开发时有时会遇到跨域问题，可以通过express起服务器结合http-proxy-middleware代理跨域</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">const</span> timeout = <span class="built_in">require</span>(<span class="string">'connect-timeout'</span>);</div><div class="line"><span class="keyword">const</span> &#123; createProxyMiddleware &#125; = <span class="built_in">require</span>(<span class="string">'http-proxy-middleware'</span>); <span class="comment">//1.0之后的http-proxy-middleware插件需要用这么引入，网上很多教程还是老的，所以会调不通</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> app = express();</div><div class="line"><span class="comment">// 这里从环境变量读取配置，方便命令行启动</span></div><div class="line"><span class="comment">// HOST 指目标地址</span></div><div class="line"><span class="comment">// PORT 服务端口</span></div><div class="line"><span class="keyword">const</span> &#123; HOST = <span class="string">'https://newsapi.yiche.com'</span>, PORT = <span class="string">'9000'</span> &#125; = process.env;</div><div class="line"></div><div class="line"><span class="comment">// 超时时间</span></div><div class="line"><span class="keyword">const</span> TIME_OUT = <span class="number">3000</span> * <span class="number">1e3</span>;</div><div class="line"></div><div class="line"><span class="comment">// 设置端口</span></div><div class="line">app.set(<span class="string">'port'</span>, PORT);</div><div class="line"></div><div class="line"><span class="comment">//设置超时</span></div><div class="line">app.use(timeout(TIME_OUT));</div><div class="line">app.use(<span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span> (!req.timedout) next();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 静态页面</span></div><div class="line"><span class="comment">// 这里一般设置你的静态资源路径</span></div><div class="line">app.use(express.static(<span class="string">'public'</span>))</div><div class="line"></div><div class="line"><span class="comment">// 反向代理（这里把需要进行反代的路径配置到这里即可）</span></div><div class="line"><span class="keyword">let</span> opts = &#123;</div><div class="line">   <span class="attr">target</span>: HOST , </div><div class="line">   <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//代理/liveapp开始的接口地址</span></div><div class="line">app.use(createProxyMiddleware(<span class="string">'/liveapp'</span>, opts));</div><div class="line"></div><div class="line"><span class="comment">// 监听端口</span></div><div class="line">app.listen(app.get(<span class="string">'port'</span>), () =&gt; &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">`server running @<span class="subst">$&#123;app.get(<span class="string">'port'</span>)&#125;</span>`</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>前端ajax请求</p>
+<pre><code class="js">$.ajax({
+  <span class="attr">type</span>: <span class="string">"get"</span>,
+  <span class="attr">url</span>: <span class="string">"/liveapp/live/enter/"</span>,
+  <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>{
+    <span class="built_in">console</span>.log(data)
+  },
+  <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>{
+    <span class="built_in">console</span>.log(res);
+  }
+});
+</code></pre>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;立即执行函数&quot;&gt;&lt;a href=&quot;#立即执行函数&quot; class=&quot;headerlink&quot; title=&quot;立即执行函数&quot;&gt;&lt;/a&gt;立即执行函数&lt;/h3&gt;&lt;p&gt;单独来说说立即执行函数&lt;/p&gt;
-&lt;p&gt;通常的格式&lt;/p&gt;
-&lt;p&gt;(function(){}())   //w
+      &lt;p&gt;前端在本地开发时有时会遇到跨域问题，可以通过express起服务器结合http-proxy-middleware代理跨域&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="前端" scheme="https://songsfw.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="跨域" scheme="https://songsfw.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
     
   </entry>
   
   <entry>
     <title>javascript-继承</title>
-    <link href="http://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E7%BB%A7%E6%89%BF/"/>
-    <id>http://songsfw.github.io/2017/07/25/JavaScript入门-继承/</id>
+    <link href="https://songsfw.github.io/2017/07/25/JavaScript%E5%85%A5%E9%97%A8-%E7%BB%A7%E6%89%BF/"/>
+    <id>https://songsfw.github.io/2017/07/25/JavaScript入门-继承/</id>
     <published>2017-07-25T02:24:00.000Z</published>
     <updated>2020-04-26T14:35:59.372Z</updated>
     
@@ -712,17 +751,17 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>vue-watch和computed</title>
-    <link href="http://songsfw.github.io/2017/07/25/vue-watch%E5%92%8Ccomputed/"/>
-    <id>http://songsfw.github.io/2017/07/25/vue-watch和computed/</id>
+    <link href="https://songsfw.github.io/2017/07/25/vue-watch%E5%92%8Ccomputed/"/>
+    <id>https://songsfw.github.io/2017/07/25/vue-watch和computed/</id>
     <published>2017-07-25T02:24:00.000Z</published>
     <updated>2020-04-28T08:05:02.742Z</updated>
     
@@ -756,56 +795,17 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="vue" scheme="http://songsfw.github.io/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端通过http-proxy-middleware代理跨域</title>
-    <link href="http://songsfw.github.io/2017/07/25/%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E4%BB%A3%E7%90%86%E8%B7%A8%E5%9F%9F/"/>
-    <id>http://songsfw.github.io/2017/07/25/前端本地开发代理跨域/</id>
-    <published>2017-07-25T02:24:00.000Z</published>
-    <updated>2020-03-10T08:01:24.702Z</updated>
-    
-    <content type="html"><![CDATA[<p>前端在本地开发时有时会遇到跨域问题，可以通过express起服务器结合http-proxy-middleware代理跨域</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">const</span> timeout = <span class="built_in">require</span>(<span class="string">'connect-timeout'</span>);</div><div class="line"><span class="keyword">const</span> &#123; createProxyMiddleware &#125; = <span class="built_in">require</span>(<span class="string">'http-proxy-middleware'</span>); <span class="comment">//1.0之后的http-proxy-middleware插件需要用这么引入，网上很多教程还是老的，所以会调不通</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> app = express();</div><div class="line"><span class="comment">// 这里从环境变量读取配置，方便命令行启动</span></div><div class="line"><span class="comment">// HOST 指目标地址</span></div><div class="line"><span class="comment">// PORT 服务端口</span></div><div class="line"><span class="keyword">const</span> &#123; HOST = <span class="string">'https://newsapi.yiche.com'</span>, PORT = <span class="string">'9000'</span> &#125; = process.env;</div><div class="line"></div><div class="line"><span class="comment">// 超时时间</span></div><div class="line"><span class="keyword">const</span> TIME_OUT = <span class="number">3000</span> * <span class="number">1e3</span>;</div><div class="line"></div><div class="line"><span class="comment">// 设置端口</span></div><div class="line">app.set(<span class="string">'port'</span>, PORT);</div><div class="line"></div><div class="line"><span class="comment">//设置超时</span></div><div class="line">app.use(timeout(TIME_OUT));</div><div class="line">app.use(<span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span> (!req.timedout) next();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 静态页面</span></div><div class="line"><span class="comment">// 这里一般设置你的静态资源路径</span></div><div class="line">app.use(express.static(<span class="string">'public'</span>))</div><div class="line"></div><div class="line"><span class="comment">// 反向代理（这里把需要进行反代的路径配置到这里即可）</span></div><div class="line"><span class="keyword">let</span> opts = &#123;</div><div class="line">   <span class="attr">target</span>: HOST , </div><div class="line">   <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//代理/liveapp开始的接口地址</span></div><div class="line">app.use(createProxyMiddleware(<span class="string">'/liveapp'</span>, opts));</div><div class="line"></div><div class="line"><span class="comment">// 监听端口</span></div><div class="line">app.listen(app.get(<span class="string">'port'</span>), () =&gt; &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">`server running @<span class="subst">$&#123;app.get(<span class="string">'port'</span>)&#125;</span>`</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>前端ajax请求</p>
-<pre><code class="js">$.ajax({
-  <span class="attr">type</span>: <span class="string">"get"</span>,
-  <span class="attr">url</span>: <span class="string">"/liveapp/live/enter/"</span>,
-  <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>{
-    <span class="built_in">console</span>.log(data)
-  },
-  <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>{
-    <span class="built_in">console</span>.log(res);
-  }
-});
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前端在本地开发时有时会遇到跨域问题，可以通过express起服务器结合http-proxy-middleware代理跨域&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
-    
-    </summary>
-    
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="前端" scheme="http://songsfw.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="跨域" scheme="http://songsfw.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
+      <category term="vue" scheme="https://songsfw.github.io/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>指针及深浅复制</title>
-    <link href="http://songsfw.github.io/2017/07/25/%E6%8C%87%E9%92%88%E5%8F%8A%E6%B7%B1%E6%B5%85%E5%A4%8D%E5%88%B6/"/>
-    <id>http://songsfw.github.io/2017/07/25/指针及深浅复制/</id>
+    <link href="https://songsfw.github.io/2017/07/25/%E6%8C%87%E9%92%88%E5%8F%8A%E6%B7%B1%E6%B5%85%E5%A4%8D%E5%88%B6/"/>
+    <id>https://songsfw.github.io/2017/07/25/指针及深浅复制/</id>
     <published>2017-07-25T02:24:00.000Z</published>
     <updated>2020-02-05T09:04:10.684Z</updated>
     
@@ -835,17 +835,17 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>小算法</title>
-    <link href="http://songsfw.github.io/2017/07/25/%E9%A2%9820170823/"/>
-    <id>http://songsfw.github.io/2017/07/25/题20170823/</id>
+    <link href="https://songsfw.github.io/2017/07/25/%E9%A2%9820170823/"/>
+    <id>https://songsfw.github.io/2017/07/25/题20170823/</id>
     <published>2017-07-25T02:24:00.000Z</published>
     <updated>2020-06-10T03:27:33.149Z</updated>
     
@@ -879,17 +879,17 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>browser-sync的使用</title>
-    <link href="http://songsfw.github.io/2017/07/22/browser-sync%20%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://songsfw.github.io/2017/07/22/browser-sync 的使用/</id>
+    <link href="https://songsfw.github.io/2017/07/22/browser-sync%20%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://songsfw.github.io/2017/07/22/browser-sync 的使用/</id>
     <published>2017-07-21T16:00:00.000Z</published>
     <updated>2018-04-23T17:44:50.273Z</updated>
     
@@ -906,17 +906,17 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>about ajax</title>
-    <link href="http://songsfw.github.io/2017/06/30/about%20ajax/"/>
-    <id>http://songsfw.github.io/2017/06/30/about ajax/</id>
+    <link href="https://songsfw.github.io/2017/06/30/about%20ajax/"/>
+    <id>https://songsfw.github.io/2017/06/30/about ajax/</id>
     <published>2017-06-29T16:00:00.000Z</published>
     <updated>2018-04-23T17:40:27.173Z</updated>
     
@@ -1019,17 +1019,17 @@
     
     </summary>
     
-      <category term="前端开发" scheme="http://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://songsfw.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="javascript" scheme="http://songsfw.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://songsfw.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>永不消逝的风</title>
-    <link href="http://songsfw.github.io/2016/12/07/%E6%B0%B8%E4%B8%8D%E6%B6%88%E9%80%9D%E7%9A%84%E9%A3%8E/"/>
-    <id>http://songsfw.github.io/2016/12/07/永不消逝的风/</id>
+    <link href="https://songsfw.github.io/2016/12/07/%E6%B0%B8%E4%B8%8D%E6%B6%88%E9%80%9D%E7%9A%84%E9%A3%8E/"/>
+    <id>https://songsfw.github.io/2016/12/07/永不消逝的风/</id>
     <published>2016-12-07T13:20:00.000Z</published>
     <updated>2016-12-07T13:45:08.928Z</updated>
     
@@ -1047,10 +1047,10 @@
     
     </summary>
     
-      <category term="科幻" scheme="http://songsfw.github.io/categories/%E7%A7%91%E5%B9%BB/"/>
+      <category term="科幻" scheme="https://songsfw.github.io/categories/%E7%A7%91%E5%B9%BB/"/>
     
     
-      <category term="科幻" scheme="http://songsfw.github.io/tags/%E7%A7%91%E5%B9%BB/"/>
+      <category term="科幻" scheme="https://songsfw.github.io/tags/%E7%A7%91%E5%B9%BB/"/>
     
   </entry>
   
