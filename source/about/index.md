@@ -3,11 +3,11 @@ toc: true
 ---
 <p align="center" class="mb-2">
 <img class="not-gallery-item" style="height:48px" src="https://ppoffice.github.io/hexo-theme-icarus/img/logo.svg">
-<br> A simple, delicate, and modern theme for the static site generator Hexo.
+<br>野生前端多年，技术知识星星点点却散乱不成系统，
 <br>
-<a href="https://ppoffice.github.io/hexo-theme-icarus/">Preview</a> |
-<a href="https://ppoffice.github.io/hexo-theme-icarus/categories/">Documentation</a> |
-<a href="https://github.com/ppoffice/hexo-theme-icarus/discussions">Discuss on GitHub</a>
+<a href="https://songsfw.github.io/categories/重学前端">重学前端</a> |
+<a href="https://songsfw.github.io/categories/astronomy">天文摄影</a> |
+<a href="">我在公众号</a>
 </p>
 
 ![](https://ppoffice.github.io/hexo-theme-icarus/gallery/preview.png?1 "Icarus Preview")

@@ -2,7 +2,7 @@
 title: vue watch与computed
 date: 2021-12-08 16:17:02
 categories:
-- 前端开发
+- 重学前端
 tags: 
 - vue
 cover: /gallery/covers/vector_landscape_1.svg
